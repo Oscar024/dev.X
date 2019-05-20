@@ -4386,7 +4386,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;funciones.c: 57: LCD_goto(LCD_01_ADDRESS,1,1);
 "57
 [e ( _LCD_goto (3 , , _LCD_01_ADDRESS -> -> 1 `i `uc -> -> 1 `i `uc ]
-[; ;funciones.c: 58: LCD_puts(LCD_01_ADDRESS,"Teclee peso" );
+[; ;funciones.c: 58: LCD_puts(LCD_01_ADDRESS,"Teclee peso en kg" );
 "58
 [e ( _LCD_puts (2 , _LCD_01_ADDRESS -> :s 5C `*uc ]
 [; ;funciones.c: 59: peso = keyNumber();
@@ -4398,24 +4398,48 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;funciones.c: 62: LCD_puts(LCD_01_ADDRESS,"                        " );
 "62
 [e ( _LCD_puts (2 , _LCD_01_ADDRESS -> :s 6C `*uc ]
-[; ;funciones.c: 65: sprintf(text, "edad: %lu, peso: %lu", edad,peso);
-"65
-[e ( _sprintf (1 , , (. , &U _text :s 7C _edad _peso ]
-[; ;funciones.c: 66: LCD_goto(LCD_01_ADDRESS,2,1);
-"66
+[; ;funciones.c: 64: LCD_goto(LCD_01_ADDRESS,2,1);
+"64
 [e ( _LCD_goto (3 , , _LCD_01_ADDRESS -> -> 2 `i `uc -> -> 1 `i `uc ]
-[; ;funciones.c: 67: LCD_puts(LCD_01_ADDRESS,text );
+[; ;funciones.c: 65: LCD_puts(LCD_01_ADDRESS,"                        " );
+"65
+[e ( _LCD_puts (2 , _LCD_01_ADDRESS -> :s 7C `*uc ]
+[; ;funciones.c: 67: LCD_goto(LCD_01_ADDRESS,1,1);
 "67
-[e ( _LCD_puts (2 , _LCD_01_ADDRESS &U _text ]
-[; ;funciones.c: 68: }
+[e ( _LCD_goto (3 , , _LCD_01_ADDRESS -> -> 1 `i `uc -> -> 1 `i `uc ]
+[; ;funciones.c: 68: LCD_puts(LCD_01_ADDRESS,"Teclee estatura(cm)" );
 "68
+[e ( _LCD_puts (2 , _LCD_01_ADDRESS -> :s 8C `*uc ]
+[; ;funciones.c: 69: estatura = keyNumber();
+"69
+[e = _estatura ( _keyNumber ..  ]
+[; ;funciones.c: 71: LCD_goto(LCD_01_ADDRESS,2,1);
+"71
+[e ( _LCD_goto (3 , , _LCD_01_ADDRESS -> -> 2 `i `uc -> -> 1 `i `uc ]
+[; ;funciones.c: 72: LCD_puts(LCD_01_ADDRESS,"                        " );
+"72
+[e ( _LCD_puts (2 , _LCD_01_ADDRESS -> :s 9C `*uc ]
+[; ;funciones.c: 75: sprintf(text, "%lu,%lu,%lu", edad,peso,estatura);
+"75
+[e ( _sprintf (1 , , , (. , &U _text :s 10C _edad _peso _estatura ]
+[; ;funciones.c: 76: LCD_goto(LCD_01_ADDRESS,2,1);
+"76
+[e ( _LCD_goto (3 , , _LCD_01_ADDRESS -> -> 2 `i `uc -> -> 1 `i `uc ]
+[; ;funciones.c: 77: LCD_puts(LCD_01_ADDRESS,text );
+"77
+[e ( _LCD_puts (2 , _LCD_01_ADDRESS &U _text ]
+[; ;funciones.c: 78: }
+"78
 [e :UE 411 ]
 }
 [p f _sprintf 8389648 ]
-[a 7C 101 100 97 100 58 32 37 108 117 44 32 112 101 115 111 58 32 37 108 117 0 ]
-[a 5C 84 101 99 108 101 101 32 112 101 115 111 0 ]
+[a 10C 37 108 117 44 37 108 117 44 37 108 117 0 ]
+[a 5C 84 101 99 108 101 101 32 112 101 115 111 32 101 110 32 107 103 0 ]
 [a 3C 84 101 99 108 101 101 32 101 100 97 100 0 ]
+[a 8C 84 101 99 108 101 101 32 101 115 116 97 116 117 114 97 40 99 109 41 0 ]
 [a 1C 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 0 ]
 [a 2C 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 0 ]
 [a 4C 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 0 ]
 [a 6C 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 0 ]
+[a 7C 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 0 ]
+[a 9C 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 0 ]

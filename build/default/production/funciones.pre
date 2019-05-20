@@ -5789,14 +5789,24 @@ LCD_goto(LCD_01_ADDRESS,2,1);
 LCD_puts(LCD_01_ADDRESS,"                        " );
 
 LCD_goto(LCD_01_ADDRESS,1,1);
-LCD_puts(LCD_01_ADDRESS,"Teclee peso" );
+LCD_puts(LCD_01_ADDRESS,"Teclee peso en kg" );
 peso = keyNumber();
 
 LCD_goto(LCD_01_ADDRESS,2,1);
 LCD_puts(LCD_01_ADDRESS,"                        " );
 
+LCD_goto(LCD_01_ADDRESS,2,1);
+LCD_puts(LCD_01_ADDRESS,"                        " );
 
-sprintf(text, "edad: %lu, peso: %lu", edad,peso);
+LCD_goto(LCD_01_ADDRESS,1,1);
+LCD_puts(LCD_01_ADDRESS,"Teclee estatura(cm)" );
+estatura = keyNumber();
+
+LCD_goto(LCD_01_ADDRESS,2,1);
+LCD_puts(LCD_01_ADDRESS,"                        " );
+
+
+sprintf(text, "%lu,%lu,%lu", edad,peso,estatura);
 LCD_goto(LCD_01_ADDRESS,2,1);
 LCD_puts(LCD_01_ADDRESS,text );
 }

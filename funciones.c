@@ -55,14 +55,24 @@ void riksFactors(){
     LCD_puts(LCD_01_ADDRESS,"                        " ); 
     //peso
     LCD_goto(LCD_01_ADDRESS,1,1);
-    LCD_puts(LCD_01_ADDRESS,"Teclee peso" ); 
+    LCD_puts(LCD_01_ADDRESS,"Teclee peso en kg" ); 
     peso = keyNumber();
+    //clear line 2
+    LCD_goto(LCD_01_ADDRESS,2,1);
+    LCD_puts(LCD_01_ADDRESS,"                        " ); 
+    //clear line 2
+    LCD_goto(LCD_01_ADDRESS,2,1);
+    LCD_puts(LCD_01_ADDRESS,"                        " ); 
+    //peso
+    LCD_goto(LCD_01_ADDRESS,1,1);
+    LCD_puts(LCD_01_ADDRESS,"Teclee estatura(cm)" ); 
+    estatura = keyNumber();
     //clear line 2
     LCD_goto(LCD_01_ADDRESS,2,1);
     LCD_puts(LCD_01_ADDRESS,"                        " ); 
     
     //imprimir 
-    sprintf(text, "edad: %lu, peso: %lu", edad,peso);
+    sprintf(text, "%lu,%lu,%lu", edad,peso,estatura);
     LCD_goto(LCD_01_ADDRESS,2,1);
     LCD_puts(LCD_01_ADDRESS,text ); 
 }
