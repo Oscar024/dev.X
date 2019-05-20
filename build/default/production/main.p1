@@ -12,14 +12,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _KP_init `(v ~T0 @X0 0 ef ]
 "49 lcd.h
 [v _LCD_putcmd `(v ~T0 @X0 0 ef3`uc`uc`uc ]
-"194 C:\Program Files (x86)\Microchip\xc8\v1.41\include\stdio.h
-[v _sprintf `(i ~T0 @X0 0 e1v`*uc`*Cuc ]
-"42 funciones.h
-[v _keyNumber `(ul ~T0 @X0 0 ef ]
-"52 lcd.h
-[v _LCD_goto `(v ~T0 @X0 0 ef3`uc`uc`uc ]
-"51
-[v _LCD_puts `(v ~T0 @X0 0 ef2`uc`*uc ]
+"43 funciones.h
+[v _riksFactors `(v ~T0 @X0 0 ef ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -4181,6 +4175,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;KeyPad Library.h: 39: int KP_scan();
 [; ;KeyPad Library.h: 40: char KP_Readbutton();
 [; ;funciones.h: 42: unsigned long int keyNumber();
+[; ;funciones.h: 43: void riksFactors();
 "11 main.c
 [v _text `uc ~T0 @X0 -> 80 `i e ]
 [; ;main.c: 11: char text[80];
@@ -4233,49 +4228,24 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _counter `ui ~T0 @X0 1 a ]
 [; ;main.c: 30: unsigned int counter = 0;
 [e = _counter -> -> 0 `i `ui ]
+[; ;main.c: 31: LCD_putcmd(LCD_01_ADDRESS, 0x01,1);
+"31
+[e ( _LCD_putcmd (3 , , _LCD_01_ADDRESS -> -> 1 `i `uc -> -> 1 `i `uc ]
 [; ;main.c: 32: while(1) {
 "32
 [e :U 405 ]
 {
-[; ;main.c: 33: LCD_putcmd(LCD_01_ADDRESS, 0x01,1);
-"33
-[e ( _LCD_putcmd (3 , , _LCD_01_ADDRESS -> -> 1 `i `uc -> -> 1 `i `uc ]
-[; ;main.c: 35: sprintf(text, "num: %lu", keyNumber());
-"35
-[e ( _sprintf (1 , (. , &U _text :s 1C ( _keyNumber ..  ]
-[; ;main.c: 38: LCD_goto(LCD_01_ADDRESS,2,1);
-"38
-[e ( _LCD_goto (3 , , _LCD_01_ADDRESS -> -> 2 `i `uc -> -> 1 `i `uc ]
-[; ;main.c: 39: LCD_puts(LCD_01_ADDRESS,text );
-"39
-[e ( _LCD_puts (2 , _LCD_01_ADDRESS &U _text ]
-[; ;main.c: 40: LCD_goto(LCD_01_ADDRESS,3,1);
-"40
-[e ( _LCD_goto (3 , , _LCD_01_ADDRESS -> -> 3 `i `uc -> -> 1 `i `uc ]
-[; ;main.c: 41: LCD_puts(LCD_01_ADDRESS, "--------------\0");
-"41
-[e ( _LCD_puts (2 , _LCD_01_ADDRESS -> :s 2C `*uc ]
-[; ;main.c: 42: LCD_goto(LCD_01_ADDRESS,4,1);
-"42
-[e ( _LCD_goto (3 , , _LCD_01_ADDRESS -> -> 4 `i `uc -> -> 1 `i `uc ]
-[; ;main.c: 43: LCD_puts(LCD_01_ADDRESS, "Carvajal\0");
-"43
-[e ( _LCD_puts (2 , _LCD_01_ADDRESS -> :s 3C `*uc ]
-[; ;main.c: 44: longDelay(10);
-"44
-[e ( _longDelay (1 -> 10 `i ]
-"48
+[; ;main.c: 34: riksFactors();
+"34
+[e ( _riksFactors ..  ]
+"49
 }
 [e :U 404 ]
 "32
 [e $U 405  ]
 [e :U 406 ]
-[; ;main.c: 48: }
 [; ;main.c: 49: }
-"49
+[; ;main.c: 50: }
+"50
 [e :UE 403 ]
 }
-[p f _sprintf 8389648 ]
-[a 1C 110 117 109 58 32 37 108 117 0 ]
-[a 3C 67 97 114 118 97 106 97 108 0 0 ]
-[a 2C 45 45 45 45 45 45 45 45 45 45 45 45 45 45 0 0 ]

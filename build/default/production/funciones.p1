@@ -1,5 +1,5 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"14 funciones.c
+"15 funciones.c
 [v _KP_Readbutton `(i ~T0 @X0 0 ef ]
 "52 lcd.h
 [v _LCD_goto `(v ~T0 @X0 0 ef3`uc`uc`uc ]
@@ -7,6 +7,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _LCD_puts `(v ~T0 @X0 0 ef2`uc`*uc ]
 "55 C:\Program Files (x86)\Microchip\xc8\v1.41\include\stdlib.h
 [v _atoi `(i ~T0 @X0 0 ef1`*Cuc ]
+"194 C:\Program Files (x86)\Microchip\xc8\v1.41\include\stdio.h
+[v _sprintf `(i ~T0 @X0 0 e1v`*uc`*Cuc ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -4130,6 +4132,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic18.h: 163: extern __nonreentrant void _delaywdt(unsigned long);
 [; ;pic18.h: 165: extern __nonreentrant void _delay3(unsigned char);
 [; ;funciones.h: 42: unsigned long int keyNumber();
+[; ;funciones.h: 43: void riksFactors();
 [; ;stdlib.h: 7: typedef unsigned short wchar_t;
 [; ;stdlib.h: 15: typedef struct {
 [; ;stdlib.h: 16: int rem;
@@ -4180,120 +4183,239 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stdlib.h: 101: extern char * ltoa(char * buf, long val, int base);
 [; ;stdlib.h: 102: extern char * ultoa(char * buf, unsigned long val, int base);
 [; ;stdlib.h: 104: extern char * ftoa(float f, int * status);
+[; ;stdarg.h: 7: typedef void * va_list[1];
+[; ;stdarg.h: 10: extern void * __va_start(void);
+[; ;stdarg.h: 13: extern void * __va_arg(void *, ...);
+[; ;stdio.h: 43: struct __prbuf
+[; ;stdio.h: 44: {
+[; ;stdio.h: 45: char * ptr;
+[; ;stdio.h: 46: void (* func)(char);
+[; ;stdio.h: 47: };
+[; ;errno.h: 29: extern int errno;
+[; ;conio.h: 12: extern void init_uart(void);
+[; ;conio.h: 14: extern char getch(void);
+[; ;conio.h: 15: extern char getche(void);
+[; ;conio.h: 16: extern void putch(char);
+[; ;conio.h: 17: extern void ungetch(char);
+[; ;conio.h: 19: extern __bit kbhit(void);
+[; ;conio.h: 23: extern char * cgets(char *);
+[; ;conio.h: 24: extern void cputs(const char *);
+[; ;stdio.h: 88: extern int cprintf(char *, ...);
+[; ;stdio.h: 93: extern int _doprnt(struct __prbuf *, const register char *, register va_list);
+[; ;stdio.h: 183: extern char * gets(char *);
+[; ;stdio.h: 184: extern int puts(const char *);
+[; ;stdio.h: 185: extern int scanf(const char *, ...) __attribute__((unsupported("scanf() is not supported by this compiler")));
+[; ;stdio.h: 186: extern int sscanf(const char *, const char *, ...) __attribute__((unsupported("sscanf() is not supported by this compiler")));
+[; ;stdio.h: 187: extern int vprintf(const char *, va_list) __attribute__((unsupported("vprintf() is not supported by this compiler")));
+[; ;stdio.h: 188: extern int vsprintf(char *, const char *, va_list) __attribute__((unsupported("vsprintf() is not supported by this compiler")));
+[; ;stdio.h: 189: extern int vscanf(const char *, va_list ap) __attribute__((unsupported("vscanf() is not supported by this compiler")));
+[; ;stdio.h: 190: extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupported("vsscanf() is not supported by this compiler")));
+[; ;stdio.h: 194: extern int sprintf(char *, const char *, ...);
+[; ;stdio.h: 195: extern int printf(const char *, ...);
 [; ;lcd.h: 47: unsigned char I2C_PCF8574_Write(unsigned char Adr,unsigned char value);
 [; ;lcd.h: 48: void LCD_init(unsigned char addr);
 [; ;lcd.h: 49: void LCD_putcmd(unsigned char addr, unsigned char data,unsigned char cmdtype);
 [; ;lcd.h: 50: void LCD_putch(unsigned char addr, unsigned char data);
 [; ;lcd.h: 51: void LCD_puts(unsigned char addr, char *s);
 [; ;lcd.h: 52: void LCD_goto(unsigned char addr, char row, char column);
-"4 funciones.c
+"5 funciones.c
 [v _LCD_01_ADDRESS `uc ~T0 @X0 1 e ]
 [i _LCD_01_ADDRESS
 -> -> 64 `i `uc
 ]
-[; ;funciones.c: 4: char LCD_01_ADDRESS = 0x40;
-"5
+[; ;funciones.c: 5: char LCD_01_ADDRESS = 0x40;
+"6
 [v _keyNumber `(ul ~T0 @X0 1 ef ]
 {
-[; ;funciones.c: 5: unsigned long int keyNumber(){
+[; ;funciones.c: 6: unsigned long int keyNumber(){
 [e :U _keyNumber ]
 [f ]
-"6
-[v _arreglo `uc ~T0 @X0 -> 20 `i a ]
 "7
+[v _arreglo `uc ~T0 @X0 -> 20 `i a ]
+"8
 [v _contador `ui ~T0 @X0 1 a ]
-[; ;funciones.c: 6: unsigned char arreglo[20];
-[; ;funciones.c: 7: unsigned int contador =0,i=0;
+[; ;funciones.c: 7: unsigned char arreglo[20];
+[; ;funciones.c: 8: unsigned int contador =0,i=0;
 [e = _contador -> -> 0 `i `ui ]
 [v _i `ui ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `ui ]
-"8
-[v _number `ul ~T0 @X0 1 a ]
-[; ;funciones.c: 8: unsigned long int number;
-[; ;funciones.c: 9: for(i;i<10;i++){
 "9
+[v _number `ul ~T0 @X0 1 a ]
+[; ;funciones.c: 9: unsigned long int number;
+[; ;funciones.c: 10: for(i;i<10;i++){
+"10
 {
 [e _i ]
-[e $ < _i -> -> 10 `i `ui 402  ]
-[e $U 403  ]
-[e :U 402 ]
-{
-[; ;funciones.c: 10: arreglo[i]=0;
-"10
-[e = *U + &U _arreglo * -> _i `ux -> -> # *U &U _arreglo `ui `ux -> -> 0 `i `uc ]
-"11
-}
-"9
-[e ++ _i -> -> 1 `i `ui ]
-[e $ < _i -> -> 10 `i `ui 402  ]
+[e $ < _i -> -> 10 `i `ui 403  ]
+[e $U 404  ]
 [e :U 403 ]
+{
+[; ;funciones.c: 11: arreglo[i]=0;
 "11
-}
+[e = *U + &U _arreglo * -> _i `ux -> -> # *U &U _arreglo `ui `ux -> -> 0 `i `uc ]
 "12
+}
+"10
+[e ++ _i -> -> 1 `i `ui ]
+[e $ < _i -> -> 10 `i `ui 403  ]
+[e :U 404 ]
+"12
+}
+"13
 [v _tecla `uc ~T0 @X0 1 a ]
-[; ;funciones.c: 11: }
-[; ;funciones.c: 12: unsigned char tecla;
-[; ;funciones.c: 13: while(1){
-"13
-[e :U 406 ]
-{
-[; ;funciones.c: 14: tecla = KP_Readbutton();
+[; ;funciones.c: 12: }
+[; ;funciones.c: 13: unsigned char tecla;
+[; ;funciones.c: 14: while(1){
 "14
-[e = _tecla -> ( _KP_Readbutton ..  `uc ]
-[; ;funciones.c: 16: if (tecla != '+'){
-"16
-[e $ ! != -> _tecla `ui -> 43 `ui 408  ]
-{
-[; ;funciones.c: 17: arreglo[contador]= tecla;
-"17
-[e = *U + &U _arreglo * -> _contador `ux -> -> # *U &U _arreglo `ui `ux _tecla ]
-[; ;funciones.c: 18: LCD_goto(LCD_01_ADDRESS,1,1);
-"18
-[e ( _LCD_goto (3 , , _LCD_01_ADDRESS -> -> 1 `i `uc -> -> 1 `i `uc ]
-[; ;funciones.c: 19: LCD_puts(LCD_01_ADDRESS, arreglo);
-"19
-[e ( _LCD_puts (2 , _LCD_01_ADDRESS &U _arreglo ]
-[; ;funciones.c: 20: contador++;
-"20
-[e ++ _contador -> -> 1 `i `ui ]
-"22
-}
-[; ;funciones.c: 22: }
-[e $U 409  ]
-"23
-[e :U 408 ]
-[; ;funciones.c: 23: else
-[; ;funciones.c: 24: {
-"24
-{
-[; ;funciones.c: 25: LCD_goto(LCD_01_ADDRESS,1,1);
-"25
-[e ( _LCD_goto (3 , , _LCD_01_ADDRESS -> -> 1 `i `uc -> -> 1 `i `uc ]
-[; ;funciones.c: 26: LCD_puts(LCD_01_ADDRESS, arreglo);
-"26
-[e ( _LCD_puts (2 , _LCD_01_ADDRESS &U _arreglo ]
-[; ;funciones.c: 27: break;
-"27
-[e $U 407  ]
-"28
-}
-[e :U 409 ]
-"32
-}
-[e :U 405 ]
-"13
-[e $U 406  ]
 [e :U 407 ]
-[; ;funciones.c: 28: }
-[; ;funciones.c: 32: }
-[; ;funciones.c: 34: number = (unsigned long int)atoi(arreglo);
-"34
-[e = _number -> ( _atoi (1 -> &U _arreglo `*Cuc `ul ]
-[; ;funciones.c: 35: return number;
-"35
-[e ) _number ]
-[e $UE 401  ]
-[; ;funciones.c: 36: }
-"36
-[e :UE 401 ]
+{
+[; ;funciones.c: 15: tecla = KP_Readbutton();
+"15
+[e = _tecla -> ( _KP_Readbutton ..  `uc ]
+[; ;funciones.c: 17: if (tecla != '+'){
+"17
+[e $ ! != -> _tecla `ui -> 43 `ui 409  ]
+{
+[; ;funciones.c: 18: arreglo[contador]= tecla;
+"18
+[e = *U + &U _arreglo * -> _contador `ux -> -> # *U &U _arreglo `ui `ux _tecla ]
+[; ;funciones.c: 19: LCD_goto(LCD_01_ADDRESS,2,1);
+"19
+[e ( _LCD_goto (3 , , _LCD_01_ADDRESS -> -> 2 `i `uc -> -> 1 `i `uc ]
+[; ;funciones.c: 20: LCD_puts(LCD_01_ADDRESS, arreglo);
+"20
+[e ( _LCD_puts (2 , _LCD_01_ADDRESS &U _arreglo ]
+[; ;funciones.c: 21: contador++;
+"21
+[e ++ _contador -> -> 1 `i `ui ]
+"23
 }
+[; ;funciones.c: 23: }
+[e $U 410  ]
+"24
+[e :U 409 ]
+[; ;funciones.c: 24: else
+[; ;funciones.c: 25: {
+"25
+{
+[; ;funciones.c: 26: LCD_goto(LCD_01_ADDRESS,2,1);
+"26
+[e ( _LCD_goto (3 , , _LCD_01_ADDRESS -> -> 2 `i `uc -> -> 1 `i `uc ]
+[; ;funciones.c: 27: LCD_puts(LCD_01_ADDRESS, arreglo);
+"27
+[e ( _LCD_puts (2 , _LCD_01_ADDRESS &U _arreglo ]
+[; ;funciones.c: 28: break;
+"28
+[e $U 408  ]
+"29
+}
+[e :U 410 ]
+"33
+}
+[e :U 406 ]
+"14
+[e $U 407  ]
+[e :U 408 ]
+[; ;funciones.c: 29: }
+[; ;funciones.c: 33: }
+[; ;funciones.c: 35: number = (unsigned long int)atoi(arreglo);
+"35
+[e = _number -> ( _atoi (1 -> &U _arreglo `*Cuc `ul ]
+[; ;funciones.c: 36: return number;
+"36
+[e ) _number ]
+[e $UE 402  ]
+[; ;funciones.c: 37: }
+"37
+[e :UE 402 ]
+}
+"39
+[v _riksFactors `(v ~T0 @X0 1 ef ]
+{
+[; ;funciones.c: 39: void riksFactors(){
+[e :U _riksFactors ]
+[f ]
+"40
+[v _text `uc ~T0 @X0 -> 80 `i a ]
+"41
+[v _edad `ul ~T0 @X0 1 a ]
+[; ;funciones.c: 40: unsigned char text[80];
+[; ;funciones.c: 41: unsigned long int edad=0,estatura=0,peso=0,gender=0,smoke=0,parents=0,systolic=0,diastolic=0;
+[e = _edad -> -> -> 0 `i `l `ul ]
+[v _estatura `ul ~T0 @X0 1 a ]
+[e = _estatura -> -> -> 0 `i `l `ul ]
+[v _peso `ul ~T0 @X0 1 a ]
+[e = _peso -> -> -> 0 `i `l `ul ]
+[v _gender `ul ~T0 @X0 1 a ]
+[e = _gender -> -> -> 0 `i `l `ul ]
+[v _smoke `ul ~T0 @X0 1 a ]
+[e = _smoke -> -> -> 0 `i `l `ul ]
+[v _parents `ul ~T0 @X0 1 a ]
+[e = _parents -> -> -> 0 `i `l `ul ]
+[v _systolic `ul ~T0 @X0 1 a ]
+[e = _systolic -> -> -> 0 `i `l `ul ]
+[v _diastolic `ul ~T0 @X0 1 a ]
+[e = _diastolic -> -> -> 0 `i `l `ul ]
+[; ;funciones.c: 44: LCD_goto(LCD_01_ADDRESS,1,1);
+"44
+[e ( _LCD_goto (3 , , _LCD_01_ADDRESS -> -> 1 `i `uc -> -> 1 `i `uc ]
+[; ;funciones.c: 45: LCD_puts(LCD_01_ADDRESS,"                        " );
+"45
+[e ( _LCD_puts (2 , _LCD_01_ADDRESS -> :s 1C `*uc ]
+[; ;funciones.c: 47: LCD_goto(LCD_01_ADDRESS,2,1);
+"47
+[e ( _LCD_goto (3 , , _LCD_01_ADDRESS -> -> 2 `i `uc -> -> 1 `i `uc ]
+[; ;funciones.c: 48: LCD_puts(LCD_01_ADDRESS,"                        " );
+"48
+[e ( _LCD_puts (2 , _LCD_01_ADDRESS -> :s 2C `*uc ]
+[; ;funciones.c: 50: LCD_goto(LCD_01_ADDRESS,1,1);
+"50
+[e ( _LCD_goto (3 , , _LCD_01_ADDRESS -> -> 1 `i `uc -> -> 1 `i `uc ]
+[; ;funciones.c: 51: LCD_puts(LCD_01_ADDRESS,"Teclee edad" );
+"51
+[e ( _LCD_puts (2 , _LCD_01_ADDRESS -> :s 3C `*uc ]
+[; ;funciones.c: 52: edad = keyNumber();
+"52
+[e = _edad ( _keyNumber ..  ]
+[; ;funciones.c: 54: LCD_goto(LCD_01_ADDRESS,2,1);
+"54
+[e ( _LCD_goto (3 , , _LCD_01_ADDRESS -> -> 2 `i `uc -> -> 1 `i `uc ]
+[; ;funciones.c: 55: LCD_puts(LCD_01_ADDRESS,"                        " );
+"55
+[e ( _LCD_puts (2 , _LCD_01_ADDRESS -> :s 4C `*uc ]
+[; ;funciones.c: 57: LCD_goto(LCD_01_ADDRESS,1,1);
+"57
+[e ( _LCD_goto (3 , , _LCD_01_ADDRESS -> -> 1 `i `uc -> -> 1 `i `uc ]
+[; ;funciones.c: 58: LCD_puts(LCD_01_ADDRESS,"Teclee peso" );
+"58
+[e ( _LCD_puts (2 , _LCD_01_ADDRESS -> :s 5C `*uc ]
+[; ;funciones.c: 59: peso = keyNumber();
+"59
+[e = _peso ( _keyNumber ..  ]
+[; ;funciones.c: 61: LCD_goto(LCD_01_ADDRESS,2,1);
+"61
+[e ( _LCD_goto (3 , , _LCD_01_ADDRESS -> -> 2 `i `uc -> -> 1 `i `uc ]
+[; ;funciones.c: 62: LCD_puts(LCD_01_ADDRESS,"                        " );
+"62
+[e ( _LCD_puts (2 , _LCD_01_ADDRESS -> :s 6C `*uc ]
+[; ;funciones.c: 65: sprintf(text, "edad: %lu, peso: %lu", edad,peso);
+"65
+[e ( _sprintf (1 , , (. , &U _text :s 7C _edad _peso ]
+[; ;funciones.c: 66: LCD_goto(LCD_01_ADDRESS,2,1);
+"66
+[e ( _LCD_goto (3 , , _LCD_01_ADDRESS -> -> 2 `i `uc -> -> 1 `i `uc ]
+[; ;funciones.c: 67: LCD_puts(LCD_01_ADDRESS,text );
+"67
+[e ( _LCD_puts (2 , _LCD_01_ADDRESS &U _text ]
+[; ;funciones.c: 68: }
+"68
+[e :UE 411 ]
+}
+[p f _sprintf 8389648 ]
+[a 7C 101 100 97 100 58 32 37 108 117 44 32 112 101 115 111 58 32 37 108 117 0 ]
+[a 5C 84 101 99 108 101 101 32 112 101 115 111 0 ]
+[a 3C 84 101 99 108 101 101 32 101 100 97 100 0 ]
+[a 1C 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 0 ]
+[a 2C 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 0 ]
+[a 4C 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 0 ]
+[a 6C 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 0 ]

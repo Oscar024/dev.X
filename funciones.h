@@ -40,7 +40,7 @@
 
 
 unsigned long int keyNumber();
-
+void riksFactors();
 
 #ifdef	__cplusplus
 extern "C" {

@@ -5669,6 +5669,7 @@ char KP_Readbutton();
 
 # 42 "funciones.h"
 unsigned long int keyNumber();
+void riksFactors();
 
 # 11 "main.c"
 char text[80];
@@ -5691,22 +5692,11 @@ KP_init();
 
 
 unsigned int counter = 0;
-
-while(1) {
 LCD_putcmd(LCD_01_ADDRESS, 0x01,1);
+while(1) {
 
-sprintf(text, "num: %lu", keyNumber());
+riksFactors();
 
-
-LCD_goto(LCD_01_ADDRESS,2,1);
-LCD_puts(LCD_01_ADDRESS,text );
-LCD_goto(LCD_01_ADDRESS,3,1);
-LCD_puts(LCD_01_ADDRESS, "--------------\0");
-LCD_goto(LCD_01_ADDRESS,4,1);
-LCD_puts(LCD_01_ADDRESS, "Carvajal\0");
-longDelay(10);
-
-
-
+# 49
 }
 }
