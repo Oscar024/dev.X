@@ -5670,6 +5670,7 @@ char KP_Readbutton();
 # 42 "funciones.h"
 unsigned long int keyNumber();
 void riksFactors();
+void lcdClear();
 
 # 11 "main.c"
 char text[80];
@@ -5697,6 +5698,10 @@ while(1) {
 
 riksFactors();
 
-# 49
+# 45
+longDelay(10);
+
+
+
 }
 }

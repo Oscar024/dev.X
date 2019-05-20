@@ -45,6 +45,8 @@
 [v _keyNumber keyNumber `(ul  1 e 4 0 ]
 "39
 [v _riksFactors riksFactors `(v  1 e 1 0 ]
+"80
+[v _lcdClear lcdClear `(v  1 e 1 0 ]
 "12 C:\Users\kuate\MPLABXProjects\dev.X\i2c_lcd.c
 [v _I2C_PCF8574_Write I2C_PCF8574_Write `(uc  1 e 1 0 ]
 "29
@@ -63,7 +65,9 @@
 [v _KP_scan KP_scan `(i  1 e 2 0 ]
 "30
 [v _KP_Readbutton KP_Readbutton `(uc  1 e 1 0 ]
-"21 C:\Users\kuate\MPLABXProjects\dev.X\main.c
+"16 C:\Users\kuate\MPLABXProjects\dev.X\main.c
+[v _longDelay longDelay `(v  1 e 1 0 ]
+"21
 [v _main main `(v  1 e 1 0 ]
 [s S23 . 1 `uc 1 RD0 1 0 :1:0 
 `uc 1 RD1 1 0 :1:1 
@@ -93,7 +97,7 @@
 [v _LATD LATD `VEuc  1 e 1 @3980 ]
 "3954
 [v _TRISD TRISD `VEuc  1 e 1 @3989 ]
-[s S288 . 1 `uc 1 TRISB0 1 0 :1:0 
+[s S289 . 1 `uc 1 TRISB0 1 0 :1:0 
 `uc 1 TRISB1 1 0 :1:1 
 `uc 1 TRISB2 1 0 :1:2 
 `uc 1 TRISB3 1 0 :1:3 
@@ -103,7 +107,7 @@
 `uc 1 TRISB7 1 0 :1:7 
 ]
 "4205
-[s S297 . 1 `uc 1 RB0 1 0 :1:0 
+[s S298 . 1 `uc 1 RB0 1 0 :1:0 
 `uc 1 RB1 1 0 :1:1 
 `uc 1 RB2 1 0 :1:2 
 `uc 1 RB3 1 0 :1:3 
@@ -112,9 +116,9 @@
 `uc 1 RB6 1 0 :1:6 
 `uc 1 RB7 1 0 :1:7 
 ]
-[u S306 . 1 `S288 1 . 1 0 `S297 1 . 1 0 ]
-[v _TRISBbits TRISBbits `VES306  1 e 1 @3987 ]
-[s S356 . 1 `uc 1 TMR1IF 1 0 :1:0 
+[u S307 . 1 `S289 1 . 1 0 `S298 1 . 1 0 ]
+[v _TRISBbits TRISBbits `VES307  1 e 1 @3987 ]
+[s S357 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR2IF 1 0 :1:1 
 `uc 1 CCP1IF 1 0 :1:2 
 `uc 1 SSPIF 1 0 :1:3 
@@ -124,17 +128,17 @@
 `uc 1 SPPIF 1 0 :1:7 
 ]
 "5062
-[s S365 . 1 `uc 1 . 1 0 :7:0 
+[s S366 . 1 `uc 1 . 1 0 :7:0 
 `uc 1 PSPIF 1 0 :1:7 
 ]
-[s S368 . 1 `uc 1 . 1 0 :5:0 
+[s S369 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 RC1IF 1 0 :1:5 
 ]
-[s S371 . 1 `uc 1 . 1 0 :4:0 
+[s S372 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 TX1IF 1 0 :1:4 
 ]
-[u S374 . 1 `S356 1 . 1 0 `S365 1 . 1 0 `S368 1 . 1 0 `S371 1 . 1 0 ]
-[v _PIR1bits PIR1bits `VES374  1 e 1 @3998 ]
+[u S375 . 1 `S357 1 . 1 0 `S366 1 . 1 0 `S369 1 . 1 0 `S372 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES375  1 e 1 @3998 ]
 [s S92 . 1 `uc 1 SEN 1 0 :1:0 
 `uc 1 RSEN 1 0 :1:1 
 `uc 1 PEN 1 0 :1:2 
@@ -169,14 +173,14 @@
 [v _SSPCON1 SSPCON1 `VEuc  1 e 1 @4038 ]
 "7533
 [v _SSPSTAT SSPSTAT `VEuc  1 e 1 @4039 ]
-[s S398 . 1 `uc 1 . 1 0 :2:0 
+[s S399 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 R_NOT_W 1 0 :1:2 
 ]
 "7635
-[s S401 . 1 `uc 1 . 1 0 :5:0 
+[s S402 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 D_NOT_A 1 0 :1:5 
 ]
-[s S404 . 1 `uc 1 BF 1 0 :1:0 
+[s S405 . 1 `uc 1 BF 1 0 :1:0 
 `uc 1 UA 1 0 :1:1 
 `uc 1 R_nW 1 0 :1:2 
 `uc 1 S 1 0 :1:3 
@@ -185,63 +189,63 @@
 `uc 1 CKE 1 0 :1:6 
 `uc 1 SMP 1 0 :1:7 
 ]
-[s S419 . 1 `uc 1 . 1 0 :2:0 
+[s S420 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 R_W 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 D_A 1 0 :1:5 
 ]
-[s S424 . 1 `uc 1 . 1 0 :2:0 
+[s S425 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 I2C_READ 1 0 :1:2 
 `uc 1 I2C_START 1 0 :1:3 
 `uc 1 I2C_STOP 1 0 :1:4 
 `uc 1 I2C_DAT 1 0 :1:5 
 ]
-[s S430 . 1 `uc 1 . 1 0 :2:0 
+[s S431 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 nW 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 nA 1 0 :1:5 
 ]
-[s S435 . 1 `uc 1 . 1 0 :2:0 
+[s S436 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 NOT_WRITE 1 0 :1:2 
 ]
-[s S438 . 1 `uc 1 . 1 0 :5:0 
+[s S439 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 NOT_ADDRESS 1 0 :1:5 
 ]
-[s S441 . 1 `uc 1 . 1 0 :2:0 
+[s S442 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 nWRITE 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 nADDRESS 1 0 :1:5 
 ]
-[s S446 . 1 `uc 1 . 1 0 :2:0 
+[s S447 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 READ_WRITE 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 DATA_ADDRESS 1 0 :1:5 
 ]
-[s S451 . 1 `uc 1 . 1 0 :2:0 
+[s S452 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 R 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 D 1 0 :1:5 
 ]
-[s S456 . 1 `uc 1 . 1 0 :5:0 
+[s S457 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 DA 1 0 :1:5 
 ]
-[s S459 . 1 `uc 1 . 1 0 :2:0 
+[s S460 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 RW 1 0 :1:2 
 ]
-[s S462 . 1 `uc 1 . 1 0 :3:0 
+[s S463 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 START 1 0 :1:3 
 ]
-[s S465 . 1 `uc 1 . 1 0 :4:0 
+[s S466 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 STOP 1 0 :1:4 
 ]
-[s S468 . 1 `uc 1 . 1 0 :2:0 
+[s S469 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 NOT_W 1 0 :1:2 
 ]
-[s S471 . 1 `uc 1 . 1 0 :5:0 
+[s S472 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 NOT_A 1 0 :1:5 
 ]
-[u S474 . 1 `S398 1 . 1 0 `S401 1 . 1 0 `S404 1 . 1 0 `S398 1 . 1 0 `S401 1 . 1 0 `S419 1 . 1 0 `S424 1 . 1 0 `S430 1 . 1 0 `S435 1 . 1 0 `S438 1 . 1 0 `S441 1 . 1 0 `S446 1 . 1 0 `S451 1 . 1 0 `S456 1 . 1 0 `S459 1 . 1 0 `S462 1 . 1 0 `S465 1 . 1 0 `S468 1 . 1 0 `S471 1 . 1 0 ]
-[v _SSPSTATbits SSPSTATbits `VES474  1 e 1 @4039 ]
+[u S475 . 1 `S399 1 . 1 0 `S402 1 . 1 0 `S405 1 . 1 0 `S399 1 . 1 0 `S402 1 . 1 0 `S420 1 . 1 0 `S425 1 . 1 0 `S431 1 . 1 0 `S436 1 . 1 0 `S439 1 . 1 0 `S442 1 . 1 0 `S447 1 . 1 0 `S452 1 . 1 0 `S457 1 . 1 0 `S460 1 . 1 0 `S463 1 . 1 0 `S466 1 . 1 0 `S469 1 . 1 0 `S472 1 . 1 0 ]
+[v _SSPSTATbits SSPSTATbits `VES475  1 e 1 @4039 ]
 "354 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\doprnt.c
 [v _dpowers dpowers `C[10]ul  1 s 40 dpowers ]
 "5 C:\Users\kuate\MPLABXProjects\dev.X\funciones.c
@@ -252,7 +256,7 @@
 [v _main main `(v  1 e 1 0 ]
 {
 "30
-[v main@counter counter `ui  1 a 2 54 ]
+[v main@counter counter `ui  1 a 2 62 ]
 "50
 } 0
 "39 C:\Users\kuate\MPLABXProjects\dev.X\funciones.c
@@ -261,29 +265,29 @@
 "40
 [v riksFactors@text text `[80]uc  1 a 80 0 ]
 "41
-[v riksFactors@gender gender `ul  1 a 4 108 ]
-[v riksFactors@peso peso `ul  1 a 4 104 ]
-[v riksFactors@estatura estatura `ul  1 a 4 100 ]
-[v riksFactors@edad edad `ul  1 a 4 96 ]
-[v riksFactors@diastolic diastolic `ul  1 a 4 92 ]
-[v riksFactors@systolic systolic `ul  1 a 4 88 ]
-[v riksFactors@parents parents `ul  1 a 4 84 ]
-[v riksFactors@smoke smoke `ul  1 a 4 80 ]
-"87
+[v riksFactors@parents parents `ul  1 a 4 108 ]
+[v riksFactors@smoke smoke `ul  1 a 4 104 ]
+[v riksFactors@gender gender `ul  1 a 4 100 ]
+[v riksFactors@peso peso `ul  1 a 4 96 ]
+[v riksFactors@estatura estatura `ul  1 a 4 92 ]
+[v riksFactors@edad edad `ul  1 a 4 88 ]
+[v riksFactors@diastolic diastolic `ul  1 a 4 84 ]
+[v riksFactors@systolic systolic `ul  1 a 4 80 ]
+"78
 } 0
 "492 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\doprnt.c
 [v _sprintf sprintf `(i  1 e 2 0 ]
 {
 "528
-[v sprintf@val val `ul  1 a 4 47 ]
+[v sprintf@val val `ul  1 a 4 55 ]
 "494
-[v sprintf@ap ap `[1]*.39v  1 a 2 51 ]
+[v sprintf@ap ap `[1]*.39v  1 a 2 59 ]
 "504
-[v sprintf@prec prec `i  1 a 2 45 ]
+[v sprintf@prec prec `i  1 a 2 53 ]
 "499
-[v sprintf@c c `c  1 a 1 53 ]
+[v sprintf@c c `c  1 a 1 61 ]
 "508
-[v sprintf@flag flag `uc  1 a 1 44 ]
+[v sprintf@flag flag `uc  1 a 1 52 ]
 "492
 [v sprintf@sp sp `*.39uc  1 p 2 22 ]
 [v sprintf@f f `*.25Cuc  1 p 2 24 ]
@@ -311,7 +315,12 @@
 [v ___lldiv@divisor divisor `ul  1 p 4 4 ]
 "31
 } 0
-"6 C:\Users\kuate\MPLABXProjects\dev.X\funciones.c
+"80 C:\Users\kuate\MPLABXProjects\dev.X\funciones.c
+[v _lcdClear lcdClear `(v  1 e 1 0 ]
+{
+"90
+} 0
+"6
 [v _keyNumber keyNumber `(ul  1 e 4 0 ]
 {
 "7
@@ -405,6 +414,15 @@
 [v KP_scan@row row `s  1 a 2 6 ]
 [v KP_scan@press press `s  1 a 2 4 ]
 "28
+} 0
+"16 C:\Users\kuate\MPLABXProjects\dev.X\main.c
+[v _longDelay longDelay `(v  1 e 1 0 ]
+{
+"17
+[v longDelay@i i `i  1 a 2 3 ]
+"16
+[v longDelay@time time `i  1 p 2 0 ]
+"18
 } 0
 "14 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\pic18\plib\i2c\i2c_open.c
 [v _OpenI2C OpenI2C `(v  1 e 1 0 ]

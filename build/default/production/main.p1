@@ -4176,6 +4176,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;KeyPad Library.h: 40: char KP_Readbutton();
 [; ;funciones.h: 42: unsigned long int keyNumber();
 [; ;funciones.h: 43: void riksFactors();
+[; ;funciones.h: 44: void lcdClear();
 "11 main.c
 [v _text `uc ~T0 @X0 -> 80 `i e ]
 [; ;main.c: 11: char text[80];
@@ -4238,6 +4239,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 34: riksFactors();
 "34
 [e ( _riksFactors ..  ]
+[; ;main.c: 45: longDelay(10);
+"45
+[e ( _longDelay (1 -> 10 `i ]
 "49
 }
 [e :U 404 ]

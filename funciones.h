@@ -41,6 +41,7 @@
 
 unsigned long int keyNumber();
 void riksFactors();
+void lcdClear();
 
 #ifdef	__cplusplus
 extern "C" {

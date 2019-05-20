@@ -42,7 +42,7 @@ void main() {
 //      LCD_puts(LCD_01_ADDRESS, "--------------\0"); 
 //      LCD_goto(LCD_01_ADDRESS,4,1);
 //      LCD_puts(LCD_01_ADDRESS, "Carvajal\0"); 
-//      longDelay(10);  
+      longDelay(10);  
 
       
 

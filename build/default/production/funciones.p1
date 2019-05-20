@@ -7,8 +7,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _LCD_puts `(v ~T0 @X0 0 ef2`uc`*uc ]
 "55 C:\Program Files (x86)\Microchip\xc8\v1.41\include\stdlib.h
 [v _atoi `(i ~T0 @X0 0 ef1`*Cuc ]
+"44 funciones.h
+[v _lcdClear `(v ~T0 @X0 0 ef ]
 "194 C:\Program Files (x86)\Microchip\xc8\v1.41\include\stdio.h
 [v _sprintf `(i ~T0 @X0 0 e1v`*uc`*Cuc ]
+"49 lcd.h
+[v _LCD_putcmd `(v ~T0 @X0 0 ef3`uc`uc`uc ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -4133,6 +4137,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic18.h: 165: extern __nonreentrant void _delay3(unsigned char);
 [; ;funciones.h: 42: unsigned long int keyNumber();
 [; ;funciones.h: 43: void riksFactors();
+[; ;funciones.h: 44: void lcdClear();
 [; ;stdlib.h: 7: typedef unsigned short wchar_t;
 [; ;stdlib.h: 15: typedef struct {
 [; ;stdlib.h: 16: int rem;
@@ -4356,114 +4361,112 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _systolic -> -> -> 0 `i `l `ul ]
 [v _diastolic `ul ~T0 @X0 1 a ]
 [e = _diastolic -> -> -> 0 `i `l `ul ]
-[; ;funciones.c: 44: LCD_goto(LCD_01_ADDRESS,1,1);
-"44
-[e ( _LCD_goto (3 , , _LCD_01_ADDRESS -> -> 1 `i `uc -> -> 1 `i `uc ]
-[; ;funciones.c: 45: LCD_puts(LCD_01_ADDRESS,"                        " );
+[; ;funciones.c: 43: lcdClear();
+"43
+[e ( _lcdClear ..  ]
+[; ;funciones.c: 45: LCD_goto(LCD_01_ADDRESS,1,1);
 "45
+[e ( _LCD_goto (3 , , _LCD_01_ADDRESS -> -> 1 `i `uc -> -> 1 `i `uc ]
+[; ;funciones.c: 46: LCD_puts(LCD_01_ADDRESS,"Teclee edad" );
+"46
 [e ( _LCD_puts (2 , _LCD_01_ADDRESS -> :s 1C `*uc ]
-[; ;funciones.c: 47: LCD_goto(LCD_01_ADDRESS,2,1);
+[; ;funciones.c: 47: edad = keyNumber();
 "47
-[e ( _LCD_goto (3 , , _LCD_01_ADDRESS -> -> 2 `i `uc -> -> 1 `i `uc ]
-[; ;funciones.c: 48: LCD_puts(LCD_01_ADDRESS,"                        " );
+[e = _edad ( _keyNumber ..  ]
+[; ;funciones.c: 48: lcdClear();
 "48
-[e ( _LCD_puts (2 , _LCD_01_ADDRESS -> :s 2C `*uc ]
+[e ( _lcdClear ..  ]
 [; ;funciones.c: 50: LCD_goto(LCD_01_ADDRESS,1,1);
 "50
 [e ( _LCD_goto (3 , , _LCD_01_ADDRESS -> -> 1 `i `uc -> -> 1 `i `uc ]
-[; ;funciones.c: 51: LCD_puts(LCD_01_ADDRESS,"Teclee edad" );
+[; ;funciones.c: 51: LCD_puts(LCD_01_ADDRESS,"Teclee peso en kg" );
 "51
-[e ( _LCD_puts (2 , _LCD_01_ADDRESS -> :s 3C `*uc ]
-[; ;funciones.c: 52: edad = keyNumber();
+[e ( _LCD_puts (2 , _LCD_01_ADDRESS -> :s 2C `*uc ]
+[; ;funciones.c: 52: peso = keyNumber();
 "52
-[e = _edad ( _keyNumber ..  ]
-[; ;funciones.c: 54: LCD_goto(LCD_01_ADDRESS,2,1);
-"54
-[e ( _LCD_goto (3 , , _LCD_01_ADDRESS -> -> 2 `i `uc -> -> 1 `i `uc ]
-[; ;funciones.c: 55: LCD_puts(LCD_01_ADDRESS,"                        " );
-"55
-[e ( _LCD_puts (2 , _LCD_01_ADDRESS -> :s 4C `*uc ]
-[; ;funciones.c: 57: LCD_goto(LCD_01_ADDRESS,1,1);
-"57
-[e ( _LCD_goto (3 , , _LCD_01_ADDRESS -> -> 1 `i `uc -> -> 1 `i `uc ]
-[; ;funciones.c: 58: LCD_puts(LCD_01_ADDRESS,"Teclee peso en kg" );
-"58
-[e ( _LCD_puts (2 , _LCD_01_ADDRESS -> :s 5C `*uc ]
-[; ;funciones.c: 59: peso = keyNumber();
-"59
 [e = _peso ( _keyNumber ..  ]
-[; ;funciones.c: 61: LCD_goto(LCD_01_ADDRESS,2,1);
-"61
-[e ( _LCD_goto (3 , , _LCD_01_ADDRESS -> -> 2 `i `uc -> -> 1 `i `uc ]
-[; ;funciones.c: 62: LCD_puts(LCD_01_ADDRESS,"                        " );
-"62
-[e ( _LCD_puts (2 , _LCD_01_ADDRESS -> :s 6C `*uc ]
-[; ;funciones.c: 64: LCD_goto(LCD_01_ADDRESS,2,1);
-"64
-[e ( _LCD_goto (3 , , _LCD_01_ADDRESS -> -> 2 `i `uc -> -> 1 `i `uc ]
-[; ;funciones.c: 65: LCD_puts(LCD_01_ADDRESS,"                        " );
-"65
-[e ( _LCD_puts (2 , _LCD_01_ADDRESS -> :s 7C `*uc ]
-[; ;funciones.c: 67: LCD_goto(LCD_01_ADDRESS,1,1);
-"67
+[; ;funciones.c: 53: lcdClear();
+"53
+[e ( _lcdClear ..  ]
+[; ;funciones.c: 55: LCD_goto(LCD_01_ADDRESS,1,1);
+"55
 [e ( _LCD_goto (3 , , _LCD_01_ADDRESS -> -> 1 `i `uc -> -> 1 `i `uc ]
-[; ;funciones.c: 68: LCD_puts(LCD_01_ADDRESS,"Teclee estatura(cm)" );
-"68
-[e ( _LCD_puts (2 , _LCD_01_ADDRESS -> :s 8C `*uc ]
-[; ;funciones.c: 69: estatura = keyNumber();
-"69
+[; ;funciones.c: 56: LCD_puts(LCD_01_ADDRESS,"Teclee estatura(cm)" );
+"56
+[e ( _LCD_puts (2 , _LCD_01_ADDRESS -> :s 3C `*uc ]
+[; ;funciones.c: 57: estatura = keyNumber();
+"57
 [e = _estatura ( _keyNumber ..  ]
-[; ;funciones.c: 71: LCD_goto(LCD_01_ADDRESS,2,1);
-"71
-[e ( _LCD_goto (3 , , _LCD_01_ADDRESS -> -> 2 `i `uc -> -> 1 `i `uc ]
-[; ;funciones.c: 72: LCD_puts(LCD_01_ADDRESS,"                        " );
-"72
-[e ( _LCD_puts (2 , _LCD_01_ADDRESS -> :s 9C `*uc ]
-[; ;funciones.c: 74: LCD_goto(LCD_01_ADDRESS,2,1);
-"74
-[e ( _LCD_goto (3 , , _LCD_01_ADDRESS -> -> 2 `i `uc -> -> 1 `i `uc ]
-[; ;funciones.c: 75: LCD_puts(LCD_01_ADDRESS,"                        " );
-"75
-[e ( _LCD_puts (2 , _LCD_01_ADDRESS -> :s 10C `*uc ]
-[; ;funciones.c: 77: LCD_goto(LCD_01_ADDRESS,1,1);
-"77
+[; ;funciones.c: 58: lcdClear();
+"58
+[e ( _lcdClear ..  ]
+[; ;funciones.c: 60: LCD_goto(LCD_01_ADDRESS,1,1);
+"60
 [e ( _LCD_goto (3 , , _LCD_01_ADDRESS -> -> 1 `i `uc -> -> 1 `i `uc ]
-[; ;funciones.c: 78: LCD_puts(LCD_01_ADDRESS,"Teclee gender 0 H 1 M" );
-"78
-[e ( _LCD_puts (2 , _LCD_01_ADDRESS -> :s 11C `*uc ]
-[; ;funciones.c: 79: gender = keyNumber();
-"79
+[; ;funciones.c: 61: LCD_puts(LCD_01_ADDRESS,"genero 0 H 1 M" );
+"61
+[e ( _LCD_puts (2 , _LCD_01_ADDRESS -> :s 4C `*uc ]
+[; ;funciones.c: 62: gender = keyNumber();
+"62
 [e = _gender ( _keyNumber ..  ]
-[; ;funciones.c: 81: LCD_goto(LCD_01_ADDRESS,2,1);
-"81
+[; ;funciones.c: 63: lcdClear();
+"63
+[e ( _lcdClear ..  ]
+[; ;funciones.c: 65: LCD_goto(LCD_01_ADDRESS,1,1);
+"65
+[e ( _LCD_goto (3 , , _LCD_01_ADDRESS -> -> 1 `i `uc -> -> 1 `i `uc ]
+[; ;funciones.c: 66: LCD_puts(LCD_01_ADDRESS,"Fuma? no 0 si 1" );
+"66
+[e ( _LCD_puts (2 , _LCD_01_ADDRESS -> :s 5C `*uc ]
+[; ;funciones.c: 67: smoke = keyNumber();
+"67
+[e = _smoke ( _keyNumber ..  ]
+[; ;funciones.c: 68: lcdClear();
+"68
+[e ( _lcdClear ..  ]
+[; ;funciones.c: 70: LCD_goto(LCD_01_ADDRESS,1,1);
+"70
+[e ( _LCD_goto (3 , , _LCD_01_ADDRESS -> -> 1 `i `uc -> -> 1 `i `uc ]
+[; ;funciones.c: 71: LCD_puts(LCD_01_ADDRESS,"padres hiper? no 0  si  1 " );
+"71
+[e ( _LCD_puts (2 , _LCD_01_ADDRESS -> :s 6C `*uc ]
+[; ;funciones.c: 72: parents = keyNumber();
+"72
+[e = _parents ( _keyNumber ..  ]
+[; ;funciones.c: 73: lcdClear();
+"73
+[e ( _lcdClear ..  ]
+[; ;funciones.c: 75: sprintf(text, "%lu,%lu,%lu,%lu,%lu,%lu", edad,peso,estatura,gender,smoke,parents);
+"75
+[e ( _sprintf (1 , , , , , , (. , &U _text :s 7C _edad _peso _estatura _gender _smoke _parents ]
+[; ;funciones.c: 76: LCD_goto(LCD_01_ADDRESS,2,1);
+"76
 [e ( _LCD_goto (3 , , _LCD_01_ADDRESS -> -> 2 `i `uc -> -> 1 `i `uc ]
-[; ;funciones.c: 82: LCD_puts(LCD_01_ADDRESS,"                        " );
-"82
-[e ( _LCD_puts (2 , _LCD_01_ADDRESS -> :s 12C `*uc ]
-[; ;funciones.c: 84: sprintf(text, "%lu,%lu,%lu,%lu", edad,peso,estatura,gender);
-"84
-[e ( _sprintf (1 , , , , (. , &U _text :s 13C _edad _peso _estatura _gender ]
-[; ;funciones.c: 85: LCD_goto(LCD_01_ADDRESS,2,1);
-"85
-[e ( _LCD_goto (3 , , _LCD_01_ADDRESS -> -> 2 `i `uc -> -> 1 `i `uc ]
-[; ;funciones.c: 86: LCD_puts(LCD_01_ADDRESS,text );
-"86
+[; ;funciones.c: 77: LCD_puts(LCD_01_ADDRESS,text );
+"77
 [e ( _LCD_puts (2 , _LCD_01_ADDRESS &U _text ]
-[; ;funciones.c: 87: }
-"87
+[; ;funciones.c: 78: }
+"78
 [e :UE 411 ]
 }
+"80
+[v _lcdClear `(v ~T0 @X0 1 ef ]
+{
+[; ;funciones.c: 80: void lcdClear(){
+[e :U _lcdClear ]
+[f ]
+[; ;funciones.c: 89: LCD_putcmd(LCD_01_ADDRESS, 0x01,1);
+"89
+[e ( _LCD_putcmd (3 , , _LCD_01_ADDRESS -> -> 1 `i `uc -> -> 1 `i `uc ]
+[; ;funciones.c: 90: }
+"90
+[e :UE 412 ]
+}
 [p f _sprintf 8389648 ]
-[a 13C 37 108 117 44 37 108 117 44 37 108 117 44 37 108 117 0 ]
-[a 5C 84 101 99 108 101 101 32 112 101 115 111 32 101 110 32 107 103 0 ]
-[a 3C 84 101 99 108 101 101 32 101 100 97 100 0 ]
-[a 11C 84 101 99 108 101 101 32 103 101 110 100 101 114 32 48 32 72 32 49 32 77 0 ]
-[a 8C 84 101 99 108 101 101 32 101 115 116 97 116 117 114 97 40 99 109 41 0 ]
-[a 1C 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 0 ]
-[a 2C 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 0 ]
-[a 4C 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 0 ]
-[a 6C 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 0 ]
-[a 7C 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 0 ]
-[a 9C 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 0 ]
-[a 10C 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 0 ]
-[a 12C 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 0 ]
+[a 7C 37 108 117 44 37 108 117 44 37 108 117 44 37 108 117 44 37 108 117 44 37 108 117 0 ]
+[a 2C 84 101 99 108 101 101 32 112 101 115 111 32 101 110 32 107 103 0 ]
+[a 1C 84 101 99 108 101 101 32 101 100 97 100 0 ]
+[a 4C 103 101 110 101 114 111 32 48 32 72 32 49 32 77 0 ]
+[a 5C 70 117 109 97 63 32 110 111 32 48 32 115 105 32 49 0 ]
+[a 3C 84 101 99 108 101 101 32 101 115 116 97 116 117 114 97 40 99 109 41 0 ]
+[a 6C 112 97 100 114 101 115 32 104 105 112 101 114 63 32 110 111 32 48 32 32 115 105 32 32 49 32 0 ]

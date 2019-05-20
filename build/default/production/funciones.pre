@@ -5597,6 +5597,7 @@ extern __nonreentrant void _delay3(unsigned char);
 # 42 "funciones.h"
 unsigned long int keyNumber();
 void riksFactors();
+void lcdClear();
 
 # 7 "C:\Program Files (x86)\Microchip\xc8\v1.41\include\stdlib.h"
 typedef unsigned short wchar_t;
@@ -5774,48 +5775,45 @@ void riksFactors(){
 unsigned char text[80];
 unsigned long int edad=0,estatura=0,peso=0,gender=0,smoke=0,parents=0,systolic=0,diastolic=0;
 
-
-LCD_goto(LCD_01_ADDRESS,1,1);
-LCD_puts(LCD_01_ADDRESS,"                        " );
-
-LCD_goto(LCD_01_ADDRESS,2,1);
-LCD_puts(LCD_01_ADDRESS,"                        " );
+lcdClear();
 
 LCD_goto(LCD_01_ADDRESS,1,1);
 LCD_puts(LCD_01_ADDRESS,"Teclee edad" );
 edad = keyNumber();
-
-LCD_goto(LCD_01_ADDRESS,2,1);
-LCD_puts(LCD_01_ADDRESS,"                        " );
+lcdClear();
 
 LCD_goto(LCD_01_ADDRESS,1,1);
 LCD_puts(LCD_01_ADDRESS,"Teclee peso en kg" );
 peso = keyNumber();
-
-LCD_goto(LCD_01_ADDRESS,2,1);
-LCD_puts(LCD_01_ADDRESS,"                        " );
-
-LCD_goto(LCD_01_ADDRESS,2,1);
-LCD_puts(LCD_01_ADDRESS,"                        " );
+lcdClear();
 
 LCD_goto(LCD_01_ADDRESS,1,1);
 LCD_puts(LCD_01_ADDRESS,"Teclee estatura(cm)" );
 estatura = keyNumber();
-
-LCD_goto(LCD_01_ADDRESS,2,1);
-LCD_puts(LCD_01_ADDRESS,"                        " );
-
-LCD_goto(LCD_01_ADDRESS,2,1);
-LCD_puts(LCD_01_ADDRESS,"                        " );
+lcdClear();
 
 LCD_goto(LCD_01_ADDRESS,1,1);
-LCD_puts(LCD_01_ADDRESS,"Teclee gender 0 H 1 M" );
+LCD_puts(LCD_01_ADDRESS,"genero 0 H 1 M" );
 gender = keyNumber();
+lcdClear();
 
-LCD_goto(LCD_01_ADDRESS,2,1);
-LCD_puts(LCD_01_ADDRESS,"                        " );
+LCD_goto(LCD_01_ADDRESS,1,1);
+LCD_puts(LCD_01_ADDRESS,"Fuma? no 0 si 1" );
+smoke = keyNumber();
+lcdClear();
 
-sprintf(text, "%lu,%lu,%lu,%lu", edad,peso,estatura,gender);
+LCD_goto(LCD_01_ADDRESS,1,1);
+LCD_puts(LCD_01_ADDRESS,"padres hiper? no 0  si  1 " );
+parents = keyNumber();
+lcdClear();
+
+sprintf(text, "%lu,%lu,%lu,%lu,%lu,%lu", edad,peso,estatura,gender,smoke,parents);
 LCD_goto(LCD_01_ADDRESS,2,1);
 LCD_puts(LCD_01_ADDRESS,text );
+}
+
+void lcdClear(){
+
+# 89
+LCD_putcmd(LCD_01_ADDRESS, 0x01,1);
 }

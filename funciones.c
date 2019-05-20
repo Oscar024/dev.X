@@ -40,48 +40,51 @@ void riksFactors(){
     unsigned char text[80];  
     unsigned long int edad=0,estatura=0,peso=0,gender=0,smoke=0,parents=0,systolic=0,diastolic=0;
 //    LCD_putcmd(LCD_01_ADDRESS, LCD_CLEAR,1);
-    //clear line 1
-    LCD_goto(LCD_01_ADDRESS,1,1);
-    LCD_puts(LCD_01_ADDRESS,"                        " ); 
-    //clear line 2
-    LCD_goto(LCD_01_ADDRESS,2,1);
-    LCD_puts(LCD_01_ADDRESS,"                        " ); 
+    lcdClear();
     //edad
     LCD_goto(LCD_01_ADDRESS,1,1);
     LCD_puts(LCD_01_ADDRESS,"Teclee edad" ); 
     edad = keyNumber();
-    //clear line 2
-    LCD_goto(LCD_01_ADDRESS,2,1);
-    LCD_puts(LCD_01_ADDRESS,"                        " ); 
+    lcdClear();
     //peso
     LCD_goto(LCD_01_ADDRESS,1,1);
     LCD_puts(LCD_01_ADDRESS,"Teclee peso en kg" ); 
     peso = keyNumber();
-    //clear line 2
-    LCD_goto(LCD_01_ADDRESS,2,1);
-    LCD_puts(LCD_01_ADDRESS,"                        " ); 
-    //clear line 2
-    LCD_goto(LCD_01_ADDRESS,2,1);
-    LCD_puts(LCD_01_ADDRESS,"                        " ); 
+    lcdClear();
     //estatura
     LCD_goto(LCD_01_ADDRESS,1,1);
     LCD_puts(LCD_01_ADDRESS,"Teclee estatura(cm)" ); 
     estatura = keyNumber();
-    //clear line 2
-    LCD_goto(LCD_01_ADDRESS,2,1);
-    LCD_puts(LCD_01_ADDRESS,"                        " ); 
-    //clear line 2
-    LCD_goto(LCD_01_ADDRESS,2,1);
-    LCD_puts(LCD_01_ADDRESS,"                        " ); 
+    lcdClear();
     //genero
     LCD_goto(LCD_01_ADDRESS,1,1);
-    LCD_puts(LCD_01_ADDRESS,"Teclee gender 0 H 1 M" ); 
+    LCD_puts(LCD_01_ADDRESS,"genero 0 H 1 M" ); 
     gender = keyNumber();
-    //clear line 2
-    LCD_goto(LCD_01_ADDRESS,2,1);
-    LCD_puts(LCD_01_ADDRESS,"                        " ); 
+    lcdClear();
+    //fuma
+    LCD_goto(LCD_01_ADDRESS,1,1);
+    LCD_puts(LCD_01_ADDRESS,"Fuma? no 0 si 1" ); 
+    smoke = keyNumber();
+    lcdClear();
+    //padres hipertensos
+    LCD_goto(LCD_01_ADDRESS,1,1);
+    LCD_puts(LCD_01_ADDRESS,"padres hiper? no 0  si  1 " ); 
+    parents = keyNumber();
+    lcdClear();
     //imprimir 
-    sprintf(text, "%lu,%lu,%lu,%lu", edad,peso,estatura,gender);
+    sprintf(text, "%lu,%lu,%lu,%lu,%lu,%lu", edad,peso,estatura,gender,smoke,parents);
     LCD_goto(LCD_01_ADDRESS,2,1);
     LCD_puts(LCD_01_ADDRESS,text ); 
+}
+
+void lcdClear(){
+//    LCD_goto(LCD_01_ADDRESS,1,1);
+//    LCD_puts(LCD_01_ADDRESS,"                                    " ); 
+//    LCD_goto(LCD_01_ADDRESS,2,1);
+//    LCD_puts(LCD_01_ADDRESS,"                                    " );
+//    LCD_goto(LCD_01_ADDRESS,3,1);
+//    LCD_puts(LCD_01_ADDRESS,"                                    " );
+//    LCD_goto(LCD_01_ADDRESS,4,1);
+//    LCD_puts(LCD_01_ADDRESS,"                                    " );
+    LCD_putcmd(LCD_01_ADDRESS, LCD_CLEAR,1);
 }
