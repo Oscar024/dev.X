@@ -4419,23 +4419,45 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;funciones.c: 72: LCD_puts(LCD_01_ADDRESS,"                        " );
 "72
 [e ( _LCD_puts (2 , _LCD_01_ADDRESS -> :s 9C `*uc ]
-[; ;funciones.c: 75: sprintf(text, "%lu,%lu,%lu", edad,peso,estatura);
-"75
-[e ( _sprintf (1 , , , (. , &U _text :s 10C _edad _peso _estatura ]
-[; ;funciones.c: 76: LCD_goto(LCD_01_ADDRESS,2,1);
-"76
+[; ;funciones.c: 74: LCD_goto(LCD_01_ADDRESS,2,1);
+"74
 [e ( _LCD_goto (3 , , _LCD_01_ADDRESS -> -> 2 `i `uc -> -> 1 `i `uc ]
-[; ;funciones.c: 77: LCD_puts(LCD_01_ADDRESS,text );
+[; ;funciones.c: 75: LCD_puts(LCD_01_ADDRESS,"                        " );
+"75
+[e ( _LCD_puts (2 , _LCD_01_ADDRESS -> :s 10C `*uc ]
+[; ;funciones.c: 77: LCD_goto(LCD_01_ADDRESS,1,1);
 "77
-[e ( _LCD_puts (2 , _LCD_01_ADDRESS &U _text ]
-[; ;funciones.c: 78: }
+[e ( _LCD_goto (3 , , _LCD_01_ADDRESS -> -> 1 `i `uc -> -> 1 `i `uc ]
+[; ;funciones.c: 78: LCD_puts(LCD_01_ADDRESS,"Teclee gender 0 H 1 M" );
 "78
+[e ( _LCD_puts (2 , _LCD_01_ADDRESS -> :s 11C `*uc ]
+[; ;funciones.c: 79: gender = keyNumber();
+"79
+[e = _gender ( _keyNumber ..  ]
+[; ;funciones.c: 81: LCD_goto(LCD_01_ADDRESS,2,1);
+"81
+[e ( _LCD_goto (3 , , _LCD_01_ADDRESS -> -> 2 `i `uc -> -> 1 `i `uc ]
+[; ;funciones.c: 82: LCD_puts(LCD_01_ADDRESS,"                        " );
+"82
+[e ( _LCD_puts (2 , _LCD_01_ADDRESS -> :s 12C `*uc ]
+[; ;funciones.c: 84: sprintf(text, "%lu,%lu,%lu,%lu", edad,peso,estatura,gender);
+"84
+[e ( _sprintf (1 , , , , (. , &U _text :s 13C _edad _peso _estatura _gender ]
+[; ;funciones.c: 85: LCD_goto(LCD_01_ADDRESS,2,1);
+"85
+[e ( _LCD_goto (3 , , _LCD_01_ADDRESS -> -> 2 `i `uc -> -> 1 `i `uc ]
+[; ;funciones.c: 86: LCD_puts(LCD_01_ADDRESS,text );
+"86
+[e ( _LCD_puts (2 , _LCD_01_ADDRESS &U _text ]
+[; ;funciones.c: 87: }
+"87
 [e :UE 411 ]
 }
 [p f _sprintf 8389648 ]
-[a 10C 37 108 117 44 37 108 117 44 37 108 117 0 ]
+[a 13C 37 108 117 44 37 108 117 44 37 108 117 44 37 108 117 0 ]
 [a 5C 84 101 99 108 101 101 32 112 101 115 111 32 101 110 32 107 103 0 ]
 [a 3C 84 101 99 108 101 101 32 101 100 97 100 0 ]
+[a 11C 84 101 99 108 101 101 32 103 101 110 100 101 114 32 48 32 72 32 49 32 77 0 ]
 [a 8C 84 101 99 108 101 101 32 101 115 116 97 116 117 114 97 40 99 109 41 0 ]
 [a 1C 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 0 ]
 [a 2C 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 0 ]
@@ -4443,3 +4465,5 @@ Version 3.2 HI-TECH Software Intermediate Code
 [a 6C 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 0 ]
 [a 7C 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 0 ]
 [a 9C 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 0 ]
+[a 10C 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 0 ]
+[a 12C 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 0 ]

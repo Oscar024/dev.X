@@ -5805,8 +5805,17 @@ estatura = keyNumber();
 LCD_goto(LCD_01_ADDRESS,2,1);
 LCD_puts(LCD_01_ADDRESS,"                        " );
 
+LCD_goto(LCD_01_ADDRESS,2,1);
+LCD_puts(LCD_01_ADDRESS,"                        " );
 
-sprintf(text, "%lu,%lu,%lu", edad,peso,estatura);
+LCD_goto(LCD_01_ADDRESS,1,1);
+LCD_puts(LCD_01_ADDRESS,"Teclee gender 0 H 1 M" );
+gender = keyNumber();
+
+LCD_goto(LCD_01_ADDRESS,2,1);
+LCD_puts(LCD_01_ADDRESS,"                        " );
+
+sprintf(text, "%lu,%lu,%lu,%lu", edad,peso,estatura,gender);
 LCD_goto(LCD_01_ADDRESS,2,1);
 LCD_puts(LCD_01_ADDRESS,text );
 }
