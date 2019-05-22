@@ -11,7 +11,7 @@
 
 char text[TEXT_BUFFER];   
 char LCD_01_ADDRESS = 0x27;     // default address of chip
-//char LCD_02_ADDRESS = 0b1001100;     // jumper on A0
+
 
 
 void longDelay(int time){
@@ -28,17 +28,13 @@ void main() {
     LCD_init(LCD_01_ADDRESS); 
     KP_init();
     
-//    PORTD=0;
-//    
-//    PORTDbits.RD7=1;
-//    while(1);
-//    LCD_init(LCD_02_ADDRESS);
+
 
     unsigned int counter = 0;
     LCD_putcmd(LCD_01_ADDRESS, LCD_CLEAR,1);
       
     while(1) {
-//      LCD_putcmd(LCD_01_ADDRESS, LCD_CLEAR,1);
+
       riksFactors();
 
       longDelay(10);  
