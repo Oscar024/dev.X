@@ -7,6 +7,7 @@
       <itemPath>KeyPad Library.h</itemPath>
       <itemPath>lcd.h</itemPath>
       <itemPath>funciones.h</itemPath>
+      <itemPath>config.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -76,7 +77,8 @@
         <property key="default-char-type" value="true"/>
         <property key="define-macros" value=""/>
         <property key="disable-optimizations" value="false"/>
-        <property key="extra-include-directories" value=""/>
+        <property key="extra-include-directories"
+                  value="..\..\..\..\..\..\..\Program Files (x86)\Microchip\xc8\v2.05;..\..\..\..\..\..\..\Program Files (x86)\Microchip\xc8\v2.05\sources\pic18\plib;..\..\..\..\..\..\..\Program Files (x86)\Microchip\xc8\v2.05\include\plib"/>
         <property key="favor-optimization-for" value="-speed,+space"/>
         <property key="garbage-collect-data" value="true"/>
         <property key="garbage-collect-functions" value="true"/>

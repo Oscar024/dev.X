@@ -1,5 +1,5 @@
 #include "KeyPad Library.h"
-#define _XTAL_FREQ                              8000000
+#define _XTAL_FREQ                              20000000
 
 short keynum;                                                                           //hold the pressed key number.
 

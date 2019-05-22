@@ -3520,130 +3520,130 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic18f4550.h: 10280: extern volatile __bit nTO @ (((unsigned) &RCON)*8) + 3;
 [; ;pic18f4550.h: 10282: extern volatile __bit nW @ (((unsigned) &SSPSTAT)*8) + 2;
 [; ;pic18f4550.h: 10284: extern volatile __bit nWRITE @ (((unsigned) &SSPSTAT)*8) + 2;
-[; ;adc.h: 2008: union ADCResult
-[; ;adc.h: 2009: {
-[; ;adc.h: 2010: int lr;
-[; ;adc.h: 2011: char br[2];
-[; ;adc.h: 2012: };
-[; ;adc.h: 2014: char BusyADC (void);
-[; ;adc.h: 2016: void ConvertADC (void);
-[; ;adc.h: 2018: void CloseADC(void);
-[; ;adc.h: 2026: int ReadADC(void);
-[; ;adc.h: 2040: void OpenADC ( unsigned char ,
-[; ;adc.h: 2041: unsigned char ,
-[; ;adc.h: 2042: unsigned char );
-[; ;adc.h: 2084: void SetChanADC(unsigned char );
-[; ;adc.h: 2100: void SelChanConvADC( unsigned char );
-[; ;ancomp.h: 38: void Close_ancomp( void );
-[; ;ancomp.h: 39: void Open_ancomp(unsigned char config);
-[; ;spi.h: 584: void OpenSPI( unsigned char sync_mode,
-[; ;spi.h: 585: unsigned char bus_mode,
-[; ;spi.h: 586: unsigned char smp_phase );
-[; ;spi.h: 588: signed char WriteSPI( unsigned char data_out );
-[; ;spi.h: 590: void getsSPI( unsigned char *rdptr, unsigned char length );
-[; ;spi.h: 592: void putsSPI( unsigned char *wrptr );
-[; ;spi.h: 594: unsigned char ReadSPI( void );
-[; ;can2510.h: 414: void CAN2510Initialize(  unsigned int configuration,
-[; ;can2510.h: 415: unsigned char brp,
-[; ;can2510.h: 416: unsigned char interruptFlags,
-[; ;can2510.h: 417: unsigned char SPI_syncMode,
-[; ;can2510.h: 418: unsigned char SPI_busMode,
-[; ;can2510.h: 419: unsigned char SPI_smpPhase );
-[; ;can2510.h: 421: signed char CAN2510Init(  unsigned long BufferConfig,
-[; ;can2510.h: 422: unsigned long BitTimeConfig,
-[; ;can2510.h: 423: unsigned char interruptEnables,
-[; ;can2510.h: 424: unsigned char SPI_syncMode,
-[; ;can2510.h: 425: unsigned char SPI_busMode,
-[; ;can2510.h: 426: unsigned char SPI_smpPhase );
-[; ;can2510.h: 428: void CAN2510Enable( void );
-[; ;can2510.h: 430: void CAN2510Disable( void );
-[; ;can2510.h: 432: void CAN2510Reset( void );
-[; ;can2510.h: 434: void CAN2510SetMode(  unsigned char mode );
-[; ;can2510.h: 436: unsigned char CAN2510ReadMode( void );
-[; ;can2510.h: 438: unsigned char CAN2510ReadStatus( void );
-[; ;can2510.h: 440: unsigned char CAN2510ErrorState( void );
-[; ;can2510.h: 442: unsigned char CAN2510InterruptStatus( void );
-[; ;can2510.h: 444: void CAN2510InterruptEnable( unsigned char interruptFlags );
-[; ;can2510.h: 446: unsigned char CAN2510ByteRead(  unsigned char addr );
-[; ;can2510.h: 448: void CAN2510ByteWrite(  unsigned char addr,  unsigned char value );
-[; ;can2510.h: 450: void CAN2510SequentialRead(  unsigned char *DataArray,
-[; ;can2510.h: 451: unsigned char CAN2510addr,
-[; ;can2510.h: 452: unsigned char numbytes );
-[; ;can2510.h: 454: void CAN2510SequentialWrite(  unsigned char *DataArray,
-[; ;can2510.h: 455: unsigned char CAN2510addr,
-[; ;can2510.h: 456: unsigned char numbytes );
-[; ;can2510.h: 458: void CAN2510BitModify(  unsigned char address,
-[; ;can2510.h: 459: unsigned char mask,
-[; ;can2510.h: 460: unsigned char data );
-[; ;can2510.h: 462: void CAN2510SetSingleMaskStd(  unsigned char maskNum,  unsigned int mask );
-[; ;can2510.h: 464: void CAN2510SetSingleMaskXtd(  unsigned char maskNum,  unsigned long mask );
-[; ;can2510.h: 466: void CAN2510SetSingleFilterStd(  unsigned char filterNum,  unsigned int filter );
-[; ;can2510.h: 468: void CAN2510SetSingleFilterXtd(  unsigned char filterNum,  unsigned long filter );
-[; ;can2510.h: 470: signed char CAN2510SetMsgFilterStd(  unsigned char bufferNum,
-[; ;can2510.h: 471: unsigned int mask,
-[; ;can2510.h: 472: unsigned int *filters );
-[; ;can2510.h: 474: signed char CAN2510SetMsgFilterXtd(  unsigned char bufferNum,
-[; ;can2510.h: 475: unsigned long mask,
-[; ;can2510.h: 476: unsigned long *filters );
-[; ;can2510.h: 478: signed char CAN2510WriteStd(  unsigned int msgId,
-[; ;can2510.h: 479: unsigned char msgPriority,
-[; ;can2510.h: 480: unsigned char numBytes,
-[; ;can2510.h: 481: unsigned char *data );
-[; ;can2510.h: 483: signed char CAN2510WriteXtd(  unsigned long msgId,
-[; ;can2510.h: 484: unsigned char msgPriority,
-[; ;can2510.h: 485: unsigned char numBytes,
-[; ;can2510.h: 486: unsigned char *data );
-[; ;can2510.h: 488: void CAN2510LoadBufferStd(  unsigned char bufferNum,
-[; ;can2510.h: 489: unsigned int msgId,
-[; ;can2510.h: 490: unsigned char numBytes,
-[; ;can2510.h: 491: unsigned char *data );
-[; ;can2510.h: 493: void CAN2510LoadBufferXtd(  unsigned char bufferNum,
-[; ;can2510.h: 494: unsigned long msgId,
-[; ;can2510.h: 495: unsigned char numBytes,
-[; ;can2510.h: 496: unsigned char *data );
-[; ;can2510.h: 498: void CAN2510LoadRTRStd(  unsigned char bufferNum,
-[; ;can2510.h: 499: unsigned int msgId,
-[; ;can2510.h: 500: unsigned char numBytes );
-[; ;can2510.h: 502: void CAN2510LoadRTRXtd(  unsigned char bufferNum,
-[; ;can2510.h: 503: unsigned long msgId,
-[; ;can2510.h: 504: unsigned char numBytes );
-[; ;can2510.h: 506: void CAN2510SetBufferPriority(  unsigned char bufferNum,
-[; ;can2510.h: 507: unsigned char bufferPriority );
-[; ;can2510.h: 509: void CAN2510SendBuffer(  unsigned char bufferNumber );
-[; ;can2510.h: 511: signed char CAN2510WriteBuffer(  unsigned char bufferNum );
-[; ;can2510.h: 513: unsigned char CAN2510DataReady(  unsigned char bufferNum );
-[; ;can2510.h: 515: unsigned char CAN2510DataRead(  unsigned char bufferNum,
-[; ;can2510.h: 516: unsigned long *msgId,
-[; ;can2510.h: 517: unsigned char *numBytes,
-[; ;can2510.h: 518: unsigned char *data );
-[; ;capture.h: 64: union capstatus
-[; ;capture.h: 65: {
-[; ;capture.h: 73: struct
-[; ;capture.h: 74: {
-[; ;capture.h: 77: unsigned Cap1OVF:1;
-[; ;capture.h: 82: unsigned Cap2OVF:1;
-[; ;capture.h: 115: };
-[; ;capture.h: 117: unsigned :8;
-[; ;capture.h: 119: };
-[; ;capture.h: 121: extern union capstatus CapStatus;
-[; ;capture.h: 123: union CapResult
-[; ;capture.h: 124: {
-[; ;capture.h: 125: unsigned int lc;
-[; ;capture.h: 126: char bc[2];
-[; ;capture.h: 127: };
-[; ;capture.h: 474: void OpenCapture1 ( unsigned char config);
-[; ;capture.h: 475: unsigned int ReadCapture1 (void);
-[; ;capture.h: 476: void CloseCapture1 (void);
-[; ;capture.h: 484: void OpenCapture2 ( unsigned char config);
-[; ;capture.h: 485: unsigned int ReadCapture2 (void);
-[; ;capture.h: 486: void CloseCapture2 (void);
-[; ;compare.h: 385: void OpenCompare1(unsigned char config,unsigned int period);
-[; ;compare.h: 386: void CloseCompare1(void);
-[; ;compare.h: 392: void OpenCompare2(unsigned char config, unsigned int period);
-[; ;compare.h: 393: void CloseCompare2(void);
-[; ;EEP.h: 36: void Busy_eep ( void );
-[; ;EEP.h: 37: unsigned char Read_b_eep( unsigned int badd );
-[; ;EEP.h: 38: void Write_b_eep( unsigned int badd, unsigned char bdat );
+[; ;plib\adc.h: 2008: union ADCResult
+[; ;plib\adc.h: 2009: {
+[; ;plib\adc.h: 2010: int lr;
+[; ;plib\adc.h: 2011: char br[2];
+[; ;plib\adc.h: 2012: };
+[; ;plib\adc.h: 2014: char BusyADC (void);
+[; ;plib\adc.h: 2016: void ConvertADC (void);
+[; ;plib\adc.h: 2018: void CloseADC(void);
+[; ;plib\adc.h: 2026: int ReadADC(void);
+[; ;plib\adc.h: 2040: void OpenADC ( unsigned char ,
+[; ;plib\adc.h: 2041: unsigned char ,
+[; ;plib\adc.h: 2042: unsigned char );
+[; ;plib\adc.h: 2084: void SetChanADC(unsigned char );
+[; ;plib\adc.h: 2100: void SelChanConvADC( unsigned char );
+[; ;plib\ancomp.h: 38: void Close_ancomp( void );
+[; ;plib\ancomp.h: 39: void Open_ancomp(unsigned char config);
+[; ;plib\spi.h: 584: void OpenSPI( unsigned char sync_mode,
+[; ;plib\spi.h: 585: unsigned char bus_mode,
+[; ;plib\spi.h: 586: unsigned char smp_phase );
+[; ;plib\spi.h: 588: signed char WriteSPI( unsigned char data_out );
+[; ;plib\spi.h: 590: void getsSPI( unsigned char *rdptr, unsigned char length );
+[; ;plib\spi.h: 592: void putsSPI( unsigned char *wrptr );
+[; ;plib\spi.h: 594: unsigned char ReadSPI( void );
+[; ;plib\can2510.h: 414: void CAN2510Initialize(  unsigned int configuration,
+[; ;plib\can2510.h: 415: unsigned char brp,
+[; ;plib\can2510.h: 416: unsigned char interruptFlags,
+[; ;plib\can2510.h: 417: unsigned char SPI_syncMode,
+[; ;plib\can2510.h: 418: unsigned char SPI_busMode,
+[; ;plib\can2510.h: 419: unsigned char SPI_smpPhase );
+[; ;plib\can2510.h: 421: signed char CAN2510Init(  unsigned long BufferConfig,
+[; ;plib\can2510.h: 422: unsigned long BitTimeConfig,
+[; ;plib\can2510.h: 423: unsigned char interruptEnables,
+[; ;plib\can2510.h: 424: unsigned char SPI_syncMode,
+[; ;plib\can2510.h: 425: unsigned char SPI_busMode,
+[; ;plib\can2510.h: 426: unsigned char SPI_smpPhase );
+[; ;plib\can2510.h: 428: void CAN2510Enable( void );
+[; ;plib\can2510.h: 430: void CAN2510Disable( void );
+[; ;plib\can2510.h: 432: void CAN2510Reset( void );
+[; ;plib\can2510.h: 434: void CAN2510SetMode(  unsigned char mode );
+[; ;plib\can2510.h: 436: unsigned char CAN2510ReadMode( void );
+[; ;plib\can2510.h: 438: unsigned char CAN2510ReadStatus( void );
+[; ;plib\can2510.h: 440: unsigned char CAN2510ErrorState( void );
+[; ;plib\can2510.h: 442: unsigned char CAN2510InterruptStatus( void );
+[; ;plib\can2510.h: 444: void CAN2510InterruptEnable( unsigned char interruptFlags );
+[; ;plib\can2510.h: 446: unsigned char CAN2510ByteRead(  unsigned char addr );
+[; ;plib\can2510.h: 448: void CAN2510ByteWrite(  unsigned char addr,  unsigned char value );
+[; ;plib\can2510.h: 450: void CAN2510SequentialRead(  unsigned char *DataArray,
+[; ;plib\can2510.h: 451: unsigned char CAN2510addr,
+[; ;plib\can2510.h: 452: unsigned char numbytes );
+[; ;plib\can2510.h: 454: void CAN2510SequentialWrite(  unsigned char *DataArray,
+[; ;plib\can2510.h: 455: unsigned char CAN2510addr,
+[; ;plib\can2510.h: 456: unsigned char numbytes );
+[; ;plib\can2510.h: 458: void CAN2510BitModify(  unsigned char address,
+[; ;plib\can2510.h: 459: unsigned char mask,
+[; ;plib\can2510.h: 460: unsigned char data );
+[; ;plib\can2510.h: 462: void CAN2510SetSingleMaskStd(  unsigned char maskNum,  unsigned int mask );
+[; ;plib\can2510.h: 464: void CAN2510SetSingleMaskXtd(  unsigned char maskNum,  unsigned long mask );
+[; ;plib\can2510.h: 466: void CAN2510SetSingleFilterStd(  unsigned char filterNum,  unsigned int filter );
+[; ;plib\can2510.h: 468: void CAN2510SetSingleFilterXtd(  unsigned char filterNum,  unsigned long filter );
+[; ;plib\can2510.h: 470: signed char CAN2510SetMsgFilterStd(  unsigned char bufferNum,
+[; ;plib\can2510.h: 471: unsigned int mask,
+[; ;plib\can2510.h: 472: unsigned int *filters );
+[; ;plib\can2510.h: 474: signed char CAN2510SetMsgFilterXtd(  unsigned char bufferNum,
+[; ;plib\can2510.h: 475: unsigned long mask,
+[; ;plib\can2510.h: 476: unsigned long *filters );
+[; ;plib\can2510.h: 478: signed char CAN2510WriteStd(  unsigned int msgId,
+[; ;plib\can2510.h: 479: unsigned char msgPriority,
+[; ;plib\can2510.h: 480: unsigned char numBytes,
+[; ;plib\can2510.h: 481: unsigned char *data );
+[; ;plib\can2510.h: 483: signed char CAN2510WriteXtd(  unsigned long msgId,
+[; ;plib\can2510.h: 484: unsigned char msgPriority,
+[; ;plib\can2510.h: 485: unsigned char numBytes,
+[; ;plib\can2510.h: 486: unsigned char *data );
+[; ;plib\can2510.h: 488: void CAN2510LoadBufferStd(  unsigned char bufferNum,
+[; ;plib\can2510.h: 489: unsigned int msgId,
+[; ;plib\can2510.h: 490: unsigned char numBytes,
+[; ;plib\can2510.h: 491: unsigned char *data );
+[; ;plib\can2510.h: 493: void CAN2510LoadBufferXtd(  unsigned char bufferNum,
+[; ;plib\can2510.h: 494: unsigned long msgId,
+[; ;plib\can2510.h: 495: unsigned char numBytes,
+[; ;plib\can2510.h: 496: unsigned char *data );
+[; ;plib\can2510.h: 498: void CAN2510LoadRTRStd(  unsigned char bufferNum,
+[; ;plib\can2510.h: 499: unsigned int msgId,
+[; ;plib\can2510.h: 500: unsigned char numBytes );
+[; ;plib\can2510.h: 502: void CAN2510LoadRTRXtd(  unsigned char bufferNum,
+[; ;plib\can2510.h: 503: unsigned long msgId,
+[; ;plib\can2510.h: 504: unsigned char numBytes );
+[; ;plib\can2510.h: 506: void CAN2510SetBufferPriority(  unsigned char bufferNum,
+[; ;plib\can2510.h: 507: unsigned char bufferPriority );
+[; ;plib\can2510.h: 509: void CAN2510SendBuffer(  unsigned char bufferNumber );
+[; ;plib\can2510.h: 511: signed char CAN2510WriteBuffer(  unsigned char bufferNum );
+[; ;plib\can2510.h: 513: unsigned char CAN2510DataReady(  unsigned char bufferNum );
+[; ;plib\can2510.h: 515: unsigned char CAN2510DataRead(  unsigned char bufferNum,
+[; ;plib\can2510.h: 516: unsigned long *msgId,
+[; ;plib\can2510.h: 517: unsigned char *numBytes,
+[; ;plib\can2510.h: 518: unsigned char *data );
+[; ;plib\capture.h: 64: union capstatus
+[; ;plib\capture.h: 65: {
+[; ;plib\capture.h: 73: struct
+[; ;plib\capture.h: 74: {
+[; ;plib\capture.h: 77: unsigned Cap1OVF:1;
+[; ;plib\capture.h: 82: unsigned Cap2OVF:1;
+[; ;plib\capture.h: 115: };
+[; ;plib\capture.h: 117: unsigned :8;
+[; ;plib\capture.h: 119: };
+[; ;plib\capture.h: 121: extern union capstatus CapStatus;
+[; ;plib\capture.h: 123: union CapResult
+[; ;plib\capture.h: 124: {
+[; ;plib\capture.h: 125: unsigned int lc;
+[; ;plib\capture.h: 126: char bc[2];
+[; ;plib\capture.h: 127: };
+[; ;plib\capture.h: 474: void OpenCapture1 ( unsigned char config);
+[; ;plib\capture.h: 475: unsigned int ReadCapture1 (void);
+[; ;plib\capture.h: 476: void CloseCapture1 (void);
+[; ;plib\capture.h: 484: void OpenCapture2 ( unsigned char config);
+[; ;plib\capture.h: 485: unsigned int ReadCapture2 (void);
+[; ;plib\capture.h: 486: void CloseCapture2 (void);
+[; ;plib\compare.h: 385: void OpenCompare1(unsigned char config,unsigned int period);
+[; ;plib\compare.h: 386: void CloseCompare1(void);
+[; ;plib\compare.h: 392: void OpenCompare2(unsigned char config, unsigned int period);
+[; ;plib\compare.h: 393: void CloseCompare2(void);
+[; ;plib\EEP.h: 36: void Busy_eep ( void );
+[; ;plib\EEP.h: 37: unsigned char Read_b_eep( unsigned int badd );
+[; ;plib\EEP.h: 38: void Write_b_eep( unsigned int badd, unsigned char bdat );
 [; ;__size_t.h: 4: typedef unsigned size_t;
 [; ;stddef.h: 6: typedef int ptrdiff_t;
 [; ;GenericTypeDefs.h: 65: typedef enum _BOOL { FALSE = 0, TRUE } BOOL;
@@ -3996,144 +3996,144 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;GenericTypeDefs.h: 549: BYTE b63:1;
 [; ;GenericTypeDefs.h: 550: } bits;
 [; ;GenericTypeDefs.h: 551: } QWORD_VAL;
-[; ;flash.h: 113: extern void ReadFlash(unsigned long startaddr, unsigned int num_bytes, unsigned char *flash_array);
-[; ;flash.h: 120: extern void EraseFlash(unsigned long startaddr, unsigned long endaddr);
-[; ;flash.h: 122: extern void WriteBlockFlash(unsigned long startaddr, unsigned char num_blocks, unsigned char *flash_array);
-[; ;flash.h: 124: extern void WriteBytesFlash(unsigned long startaddr, unsigned int num_bytes, unsigned char *flash_array);
-[; ;i2c.h: 775: void IdleI2C( void );
-[; ;i2c.h: 777: void OpenI2C( unsigned char sync_mode, unsigned char slew );
-[; ;i2c.h: 779: signed char WriteI2C( unsigned char data_out );
-[; ;i2c.h: 781: signed char putsI2C( unsigned char *wrptr );
-[; ;i2c.h: 783: unsigned char ReadI2C( void );
-[; ;i2c.h: 785: void CloseI2C( void );
-[; ;i2c.h: 899: signed char WriteI2C( unsigned char data_out );
-[; ;i2c.h: 901: signed char getsI2C( unsigned char *rdptr, unsigned char length );
-[; ;i2c.h: 908: signed char EEAckPolling( unsigned char control );
-[; ;i2c.h: 910: signed char EEByteWrite( unsigned char control,
-[; ;i2c.h: 911: unsigned char address,
-[; ;i2c.h: 912: unsigned char data );
-[; ;i2c.h: 914: signed int EECurrentAddRead( unsigned char control );
-[; ;i2c.h: 916: signed char EEPageWrite( unsigned char control,
-[; ;i2c.h: 917: unsigned char address,
-[; ;i2c.h: 918: unsigned char *wrptr );
-[; ;i2c.h: 920: signed int EERandomRead( unsigned char control, unsigned char address );
-[; ;i2c.h: 922: signed char EESequentialRead( unsigned char control,
-[; ;i2c.h: 923: unsigned char address,
-[; ;i2c.h: 924: unsigned char *rdptr,
-[; ;i2c.h: 925: unsigned char length );
-[; ;mwire.h: 325: void OpenMwire( unsigned char sync_mode );
-[; ;mwire.h: 327: unsigned char ReadMwire( unsigned char high_byte,
-[; ;mwire.h: 328: unsigned char low_byte );
-[; ;mwire.h: 341: signed char WriteMwire( unsigned char data_out );
-[; ;mwire.h: 354: void getsMwire( unsigned char *rdptr, unsigned char length );
-[; ;portb.h: 126: void OpenPORTB( unsigned char config);
-[; ;portb.h: 176: void OpenRB0INT( unsigned char config);
-[; ;portb.h: 194: void OpenRB1INT( unsigned char config);
-[; ;portb.h: 211: void OpenRB2INT( unsigned char config);
-[; ;pwm.h: 85: union PWMDC
-[; ;pwm.h: 86: {
-[; ;pwm.h: 87: unsigned int lpwm;
-[; ;pwm.h: 88: char bpwm[2];
-[; ;pwm.h: 89: };
-[; ;pwm.h: 467: void OpenPWM1 ( char period);
-[; ;pwm.h: 468: void SetDCPWM1 ( unsigned int duty_cycle);
-[; ;pwm.h: 474: void SetOutputPWM1 ( unsigned char output_config,
-[; ;pwm.h: 475: unsigned char pwm_mode);
-[; ;pwm.h: 477: void ClosePWM1 (void);
-[; ;pwm.h: 485: void OpenPWM2 ( char period);
-[; ;pwm.h: 486: void SetDCPWM2( unsigned int duty_cycle);
-[; ;pwm.h: 492: void ClosePWM2 (void);
-[; ;reset.h: 16: char isMCLR(void);
-[; ;reset.h: 17: void StatusReset(void);
-[; ;reset.h: 18: char isPOR(void);
-[; ;reset.h: 19: char isWU(void);
-[; ;reset.h: 22: char isBOR(void);
-[; ;reset.h: 26: char isWDTTO(void);
-[; ;reset.h: 27: char isWDTWU(void);
-[; ;reset.h: 31: char isLVD(void);
-[; ;rtcc.h: 687: void Open_RTCC(void);
-[; ;rtcc.h: 688: void Close_RTCC(void);
-[; ;rtcc.h: 689: unsigned char update_RTCC(void);
-[; ;sw_i2c.h: 97: void SWStopI2C ( void );
-[; ;sw_i2c.h: 98: void SWStartI2C ( void );
-[; ;sw_i2c.h: 99: void SWRestartI2C ( void );
-[; ;sw_i2c.h: 100: void SWStopI2C ( void );
-[; ;sw_i2c.h: 102: signed char SWAckI2C( void );
-[; ;sw_i2c.h: 103: signed char Clock_test( void );
-[; ;sw_i2c.h: 104: signed int SWReadI2C( void );
-[; ;sw_i2c.h: 105: signed char SWWriteI2C(  unsigned char data_out );
-[; ;sw_i2c.h: 106: signed char SWGetsI2C(  unsigned char *rdptr,  unsigned char length );
-[; ;sw_i2c.h: 107: signed char SWPutsI2C(  unsigned char *wrptr );
-[; ;sw_spi.h: 84: void OpenSWSPI(void);
-[; ;sw_spi.h: 87: char WriteSWSPI( char output);
-[; ;sw_spi.h: 90: void SetCSSWSPI(void);
-[; ;sw_spi.h: 93: void ClearCSSWSPI(void);
-[; ;sw_uart.h: 47: void OpenUART(void);
-[; ;sw_uart.h: 49: unsigned char ReadUART(void);
-[; ;sw_uart.h: 51: void WriteUART( unsigned char);
-[; ;sw_uart.h: 53: void getsUART( char *, unsigned char);
-[; ;sw_uart.h: 55: void putsUART( char *);
-[; ;sw_uart.h: 79: extern void DelayRXBitUART (void);
-[; ;sw_uart.h: 80: extern void DelayRXHalfBitUART(void);
-[; ;sw_uart.h: 81: extern void DelayTXBitUART (void);
-[; ;timers.h: 36: union Timers
-[; ;timers.h: 37: {
-[; ;timers.h: 38: unsigned int lt;
-[; ;timers.h: 39: char bt[2];
-[; ;timers.h: 40: };
-[; ;timers.h: 118: void OpenTimer0 ( unsigned char config);
-[; ;timers.h: 119: void CloseTimer0 (void);
-[; ;timers.h: 120: unsigned int ReadTimer0 (void);
-[; ;timers.h: 121: void WriteTimer0 ( unsigned int timer0);
-[; ;timers.h: 236: void OpenTimer1 ( unsigned char config);
-[; ;timers.h: 237: void CloseTimer1 (void);
-[; ;timers.h: 238: unsigned int ReadTimer1 (void);
-[; ;timers.h: 239: void WriteTimer1 ( unsigned int timer1);
-[; ;timers.h: 325: void OpenTimer2 ( unsigned char config);
-[; ;timers.h: 326: void CloseTimer2 (void);
-[; ;timers.h: 391: void OpenTimer3 ( unsigned char config);
-[; ;timers.h: 392: void CloseTimer3 (void);
-[; ;timers.h: 393: unsigned int ReadTimer3 (void);
-[; ;timers.h: 394: void WriteTimer3 ( unsigned int timer3);
-[; ;timers.h: 1179: void SetTmrCCPSrc( unsigned char );
-[; ;usart.h: 568: union USART
-[; ;usart.h: 569: {
-[; ;usart.h: 570: unsigned char val;
-[; ;usart.h: 571: struct
-[; ;usart.h: 572: {
-[; ;usart.h: 573: unsigned RX_NINE:1;
-[; ;usart.h: 574: unsigned TX_NINE:1;
-[; ;usart.h: 575: unsigned FRAME_ERROR:1;
-[; ;usart.h: 576: unsigned OVERRUN_ERROR:1;
-[; ;usart.h: 577: unsigned fill:4;
-[; ;usart.h: 578: };
-[; ;usart.h: 579: };
-[; ;usart.h: 580: extern union USART USART_Status;
-[; ;usart.h: 581: void OpenUSART ( unsigned char config, unsigned spbrg);
-[; ;usart.h: 596: char ReadUSART (void);
-[; ;usart.h: 597: void WriteUSART ( char data);
-[; ;usart.h: 598: void getsUSART ( char *buffer, unsigned char len);
-[; ;usart.h: 599: void putsUSART ( char *data);
-[; ;usart.h: 600: void putrsUSART ( const  char *data);
-[; ;usart.h: 654: void baudUSART ( unsigned char baudconfig);
-[; ;xlcd.h: 87: void OpenXLCD( unsigned char);
-[; ;xlcd.h: 92: void SetCGRamAddr( unsigned char);
-[; ;xlcd.h: 97: void SetDDRamAddr( unsigned char);
-[; ;xlcd.h: 102: unsigned char BusyXLCD(void);
-[; ;xlcd.h: 107: unsigned char ReadAddrXLCD(void);
-[; ;xlcd.h: 112: char ReadDataXLCD(void);
-[; ;xlcd.h: 117: void WriteCmdXLCD( unsigned char);
-[; ;xlcd.h: 122: void WriteDataXLCD( char);
-[; ;xlcd.h: 132: void putsXLCD( char *);
-[; ;xlcd.h: 137: void putrsXLCD(const char *);
-[; ;xlcd.h: 140: extern void DelayFor18TCY(void);
-[; ;xlcd.h: 141: extern void DelayPORXLCD(void);
-[; ;xlcd.h: 142: extern void DelayXLCD(void);
-[; ;delays.h: 13: void Delay1TCYx(unsigned char);
-[; ;delays.h: 19: void Delay10TCYx(unsigned char);
-[; ;delays.h: 25: void Delay100TCYx(unsigned char);
-[; ;delays.h: 31: void Delay1KTCYx(unsigned char);
-[; ;delays.h: 37: void Delay10KTCYx(unsigned char);
+[; ;plib\flash.h: 113: extern void ReadFlash(unsigned long startaddr, unsigned int num_bytes, unsigned char *flash_array);
+[; ;plib\flash.h: 120: extern void EraseFlash(unsigned long startaddr, unsigned long endaddr);
+[; ;plib\flash.h: 122: extern void WriteBlockFlash(unsigned long startaddr, unsigned char num_blocks, unsigned char *flash_array);
+[; ;plib\flash.h: 124: extern void WriteBytesFlash(unsigned long startaddr, unsigned int num_bytes, unsigned char *flash_array);
+[; ;plib\i2c.h: 775: void IdleI2C( void );
+[; ;plib\i2c.h: 777: void OpenI2C( unsigned char sync_mode, unsigned char slew );
+[; ;plib\i2c.h: 779: signed char WriteI2C( unsigned char data_out );
+[; ;plib\i2c.h: 781: signed char putsI2C( unsigned char *wrptr );
+[; ;plib\i2c.h: 783: unsigned char ReadI2C( void );
+[; ;plib\i2c.h: 785: void CloseI2C( void );
+[; ;plib\i2c.h: 899: signed char WriteI2C( unsigned char data_out );
+[; ;plib\i2c.h: 901: signed char getsI2C( unsigned char *rdptr, unsigned char length );
+[; ;plib\i2c.h: 908: signed char EEAckPolling( unsigned char control );
+[; ;plib\i2c.h: 910: signed char EEByteWrite( unsigned char control,
+[; ;plib\i2c.h: 911: unsigned char address,
+[; ;plib\i2c.h: 912: unsigned char data );
+[; ;plib\i2c.h: 914: signed int EECurrentAddRead( unsigned char control );
+[; ;plib\i2c.h: 916: signed char EEPageWrite( unsigned char control,
+[; ;plib\i2c.h: 917: unsigned char address,
+[; ;plib\i2c.h: 918: unsigned char *wrptr );
+[; ;plib\i2c.h: 920: signed int EERandomRead( unsigned char control, unsigned char address );
+[; ;plib\i2c.h: 922: signed char EESequentialRead( unsigned char control,
+[; ;plib\i2c.h: 923: unsigned char address,
+[; ;plib\i2c.h: 924: unsigned char *rdptr,
+[; ;plib\i2c.h: 925: unsigned char length );
+[; ;plib\mwire.h: 325: void OpenMwire( unsigned char sync_mode );
+[; ;plib\mwire.h: 327: unsigned char ReadMwire( unsigned char high_byte,
+[; ;plib\mwire.h: 328: unsigned char low_byte );
+[; ;plib\mwire.h: 341: signed char WriteMwire( unsigned char data_out );
+[; ;plib\mwire.h: 354: void getsMwire( unsigned char *rdptr, unsigned char length );
+[; ;plib\portb.h: 126: void OpenPORTB( unsigned char config);
+[; ;plib\portb.h: 176: void OpenRB0INT( unsigned char config);
+[; ;plib\portb.h: 194: void OpenRB1INT( unsigned char config);
+[; ;plib\portb.h: 211: void OpenRB2INT( unsigned char config);
+[; ;plib\pwm.h: 85: union PWMDC
+[; ;plib\pwm.h: 86: {
+[; ;plib\pwm.h: 87: unsigned int lpwm;
+[; ;plib\pwm.h: 88: char bpwm[2];
+[; ;plib\pwm.h: 89: };
+[; ;plib\pwm.h: 467: void OpenPWM1 ( char period);
+[; ;plib\pwm.h: 468: void SetDCPWM1 ( unsigned int duty_cycle);
+[; ;plib\pwm.h: 474: void SetOutputPWM1 ( unsigned char output_config,
+[; ;plib\pwm.h: 475: unsigned char pwm_mode);
+[; ;plib\pwm.h: 477: void ClosePWM1 (void);
+[; ;plib\pwm.h: 485: void OpenPWM2 ( char period);
+[; ;plib\pwm.h: 486: void SetDCPWM2( unsigned int duty_cycle);
+[; ;plib\pwm.h: 492: void ClosePWM2 (void);
+[; ;plib\reset.h: 16: char isMCLR(void);
+[; ;plib\reset.h: 17: void StatusReset(void);
+[; ;plib\reset.h: 18: char isPOR(void);
+[; ;plib\reset.h: 19: char isWU(void);
+[; ;plib\reset.h: 22: char isBOR(void);
+[; ;plib\reset.h: 26: char isWDTTO(void);
+[; ;plib\reset.h: 27: char isWDTWU(void);
+[; ;plib\reset.h: 31: char isLVD(void);
+[; ;plib\rtcc.h: 687: void Open_RTCC(void);
+[; ;plib\rtcc.h: 688: void Close_RTCC(void);
+[; ;plib\rtcc.h: 689: unsigned char update_RTCC(void);
+[; ;plib\sw_i2c.h: 97: void SWStopI2C ( void );
+[; ;plib\sw_i2c.h: 98: void SWStartI2C ( void );
+[; ;plib\sw_i2c.h: 99: void SWRestartI2C ( void );
+[; ;plib\sw_i2c.h: 100: void SWStopI2C ( void );
+[; ;plib\sw_i2c.h: 102: signed char SWAckI2C( void );
+[; ;plib\sw_i2c.h: 103: signed char Clock_test( void );
+[; ;plib\sw_i2c.h: 104: signed int SWReadI2C( void );
+[; ;plib\sw_i2c.h: 105: signed char SWWriteI2C(  unsigned char data_out );
+[; ;plib\sw_i2c.h: 106: signed char SWGetsI2C(  unsigned char *rdptr,  unsigned char length );
+[; ;plib\sw_i2c.h: 107: signed char SWPutsI2C(  unsigned char *wrptr );
+[; ;plib\sw_spi.h: 84: void OpenSWSPI(void);
+[; ;plib\sw_spi.h: 87: char WriteSWSPI( char output);
+[; ;plib\sw_spi.h: 90: void SetCSSWSPI(void);
+[; ;plib\sw_spi.h: 93: void ClearCSSWSPI(void);
+[; ;plib\sw_uart.h: 47: void OpenUART(void);
+[; ;plib\sw_uart.h: 49: unsigned char ReadUART(void);
+[; ;plib\sw_uart.h: 51: void WriteUART( unsigned char);
+[; ;plib\sw_uart.h: 53: void getsUART( char *, unsigned char);
+[; ;plib\sw_uart.h: 55: void putsUART( char *);
+[; ;plib\sw_uart.h: 79: extern void DelayRXBitUART (void);
+[; ;plib\sw_uart.h: 80: extern void DelayRXHalfBitUART(void);
+[; ;plib\sw_uart.h: 81: extern void DelayTXBitUART (void);
+[; ;plib\timers.h: 36: union Timers
+[; ;plib\timers.h: 37: {
+[; ;plib\timers.h: 38: unsigned int lt;
+[; ;plib\timers.h: 39: char bt[2];
+[; ;plib\timers.h: 40: };
+[; ;plib\timers.h: 118: void OpenTimer0 ( unsigned char config);
+[; ;plib\timers.h: 119: void CloseTimer0 (void);
+[; ;plib\timers.h: 120: unsigned int ReadTimer0 (void);
+[; ;plib\timers.h: 121: void WriteTimer0 ( unsigned int timer0);
+[; ;plib\timers.h: 236: void OpenTimer1 ( unsigned char config);
+[; ;plib\timers.h: 237: void CloseTimer1 (void);
+[; ;plib\timers.h: 238: unsigned int ReadTimer1 (void);
+[; ;plib\timers.h: 239: void WriteTimer1 ( unsigned int timer1);
+[; ;plib\timers.h: 325: void OpenTimer2 ( unsigned char config);
+[; ;plib\timers.h: 326: void CloseTimer2 (void);
+[; ;plib\timers.h: 391: void OpenTimer3 ( unsigned char config);
+[; ;plib\timers.h: 392: void CloseTimer3 (void);
+[; ;plib\timers.h: 393: unsigned int ReadTimer3 (void);
+[; ;plib\timers.h: 394: void WriteTimer3 ( unsigned int timer3);
+[; ;plib\timers.h: 1179: void SetTmrCCPSrc( unsigned char );
+[; ;plib\usart.h: 568: union USART
+[; ;plib\usart.h: 569: {
+[; ;plib\usart.h: 570: unsigned char val;
+[; ;plib\usart.h: 571: struct
+[; ;plib\usart.h: 572: {
+[; ;plib\usart.h: 573: unsigned RX_NINE:1;
+[; ;plib\usart.h: 574: unsigned TX_NINE:1;
+[; ;plib\usart.h: 575: unsigned FRAME_ERROR:1;
+[; ;plib\usart.h: 576: unsigned OVERRUN_ERROR:1;
+[; ;plib\usart.h: 577: unsigned fill:4;
+[; ;plib\usart.h: 578: };
+[; ;plib\usart.h: 579: };
+[; ;plib\usart.h: 580: extern union USART USART_Status;
+[; ;plib\usart.h: 581: void OpenUSART ( unsigned char config, unsigned spbrg);
+[; ;plib\usart.h: 596: char ReadUSART (void);
+[; ;plib\usart.h: 597: void WriteUSART ( char data);
+[; ;plib\usart.h: 598: void getsUSART ( char *buffer, unsigned char len);
+[; ;plib\usart.h: 599: void putsUSART ( char *data);
+[; ;plib\usart.h: 600: void putrsUSART ( const  char *data);
+[; ;plib\usart.h: 654: void baudUSART ( unsigned char baudconfig);
+[; ;plib\xlcd.h: 87: void OpenXLCD( unsigned char);
+[; ;plib\xlcd.h: 92: void SetCGRamAddr( unsigned char);
+[; ;plib\xlcd.h: 97: void SetDDRamAddr( unsigned char);
+[; ;plib\xlcd.h: 102: unsigned char BusyXLCD(void);
+[; ;plib\xlcd.h: 107: unsigned char ReadAddrXLCD(void);
+[; ;plib\xlcd.h: 112: char ReadDataXLCD(void);
+[; ;plib\xlcd.h: 117: void WriteCmdXLCD( unsigned char);
+[; ;plib\xlcd.h: 122: void WriteDataXLCD( char);
+[; ;plib\xlcd.h: 132: void putsXLCD( char *);
+[; ;plib\xlcd.h: 137: void putrsXLCD(const char *);
+[; ;plib\xlcd.h: 140: extern void DelayFor18TCY(void);
+[; ;plib\xlcd.h: 141: extern void DelayPORXLCD(void);
+[; ;plib\xlcd.h: 142: extern void DelayXLCD(void);
+[; ;plib\delays.h: 13: void Delay1TCYx(unsigned char);
+[; ;plib\delays.h: 19: void Delay10TCYx(unsigned char);
+[; ;plib\delays.h: 25: void Delay100TCYx(unsigned char);
+[; ;plib\delays.h: 31: void Delay1KTCYx(unsigned char);
+[; ;plib\delays.h: 37: void Delay10KTCYx(unsigned char);
 [; ;pic18.h: 18: __attribute__((__unsupported__("The " "flash_write" " routine is no longer supported. Please use the MPLAB X MCC."))) void flash_write(const unsigned char *, unsigned int, __far unsigned char *);
 [; ;pic18.h: 19: __attribute__((__unsupported__("The " "EraseFlash" " routine is no longer supported. Please use the MPLAB X MCC."))) void EraseFlash(unsigned long startaddr, unsigned long endaddr);
 [; ;pic18.h: 43: extern void __nop(void);
@@ -4196,11 +4196,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;KeyPad Library.c: 18: LATD = (0x10<<row);
 "18
 [e = _LATD -> << -> 16 `i _row `uc ]
-[; ;KeyPad Library.c: 20: if(PORTDbits.RD0 == 1){ _delay((unsigned long)((800)*(8000000/4000000.0))); while(PORTDbits.RD0 == 1); return keynum+=1; press = 1;}
+[; ;KeyPad Library.c: 20: if(PORTDbits.RD0 == 1){ _delay((unsigned long)((800)*(20000000/4000000.0))); while(PORTDbits.RD0 == 1); return keynum+=1; press = 1;}
 "20
 [e $ ! == -> . . _PORTDbits 0 0 `i -> 1 `i 402  ]
 {
-[e ( __delay (1 -> * -> -> 800 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
+[e ( __delay (1 -> * -> -> 800 `i `d / -> -> 20000000 `l `d .4000000.0 `ul ]
 [e $U 403  ]
 [e :U 404 ]
 [e :U 403 ]
@@ -4211,11 +4211,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _press -> -> 1 `i `s ]
 }
 [e :U 402 ]
-[; ;KeyPad Library.c: 21: if(PORTDbits.RD1 == 1){ _delay((unsigned long)((800)*(8000000/4000000.0))); while(PORTDbits.RD1 == 1); return keynum+=2; press = 1;}
+[; ;KeyPad Library.c: 21: if(PORTDbits.RD1 == 1){ _delay((unsigned long)((800)*(20000000/4000000.0))); while(PORTDbits.RD1 == 1); return keynum+=2; press = 1;}
 "21
 [e $ ! == -> . . _PORTDbits 0 1 `i -> 1 `i 406  ]
 {
-[e ( __delay (1 -> * -> -> 800 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
+[e ( __delay (1 -> * -> -> 800 `i `d / -> -> 20000000 `l `d .4000000.0 `ul ]
 [e $U 407  ]
 [e :U 408 ]
 [e :U 407 ]
@@ -4226,11 +4226,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _press -> -> 1 `i `s ]
 }
 [e :U 406 ]
-[; ;KeyPad Library.c: 22: if(PORTDbits.RD2 == 1){ _delay((unsigned long)((800)*(8000000/4000000.0))); while(PORTDbits.RD2 == 1); return keynum+=3; press = 1;}
+[; ;KeyPad Library.c: 22: if(PORTDbits.RD2 == 1){ _delay((unsigned long)((800)*(20000000/4000000.0))); while(PORTDbits.RD2 == 1); return keynum+=3; press = 1;}
 "22
 [e $ ! == -> . . _PORTDbits 0 2 `i -> 1 `i 410  ]
 {
-[e ( __delay (1 -> * -> -> 800 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
+[e ( __delay (1 -> * -> -> 800 `i `d / -> -> 20000000 `l `d .4000000.0 `ul ]
 [e $U 411  ]
 [e :U 412 ]
 [e :U 411 ]
@@ -4241,11 +4241,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _press -> -> 1 `i `s ]
 }
 [e :U 410 ]
-[; ;KeyPad Library.c: 23: if(PORTDbits.RD3 == 1){ _delay((unsigned long)((800)*(8000000/4000000.0))); while(PORTDbits.RD3 == 1); return keynum+=4; press = 1;}
+[; ;KeyPad Library.c: 23: if(PORTDbits.RD3 == 1){ _delay((unsigned long)((800)*(20000000/4000000.0))); while(PORTDbits.RD3 == 1); return keynum+=4; press = 1;}
 "23
 [e $ ! == -> . . _PORTDbits 0 3 `i -> 1 `i 414  ]
 {
-[e ( __delay (1 -> * -> -> 800 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
+[e ( __delay (1 -> * -> -> 800 `i `d / -> -> 20000000 `l `d .4000000.0 `ul ]
 [e $U 415  ]
 [e :U 416 ]
 [e :U 415 ]

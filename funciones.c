@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <stdio.h>   // for sprintf()
 #include "lcd.h"
-char LCD_01_ADDRESS = 0x40;     // default address
+char LCD_01_ADDRESS = 0x27;     // default address
 unsigned long int keyNumber(){
     unsigned char arreglo[20];
     unsigned int contador =0,i=0;
