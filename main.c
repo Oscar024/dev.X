@@ -40,16 +40,7 @@ void main() {
     while(1) {
 //      LCD_putcmd(LCD_01_ADDRESS, LCD_CLEAR,1);
       riksFactors();
-      
-//      sprintf(text, "num: %lu", keyNumber());
-////      LCD_goto(LCD_01_ADDRESS,1,1);
-////      LCD_putch(LCD_01_ADDRESS, KP_Readbutton()); 
-//      LCD_goto(LCD_01_ADDRESS,2,1);
-//      LCD_puts(LCD_01_ADDRESS,text ); 
-//      LCD_goto(LCD_01_ADDRESS,3,1);
-//      LCD_puts(LCD_01_ADDRESS, "--------------\0"); 
-//      LCD_goto(LCD_01_ADDRESS,4,1);
-//      LCD_puts(LCD_01_ADDRESS, "Carvajal\0"); 
+
       longDelay(10);  
 
       
